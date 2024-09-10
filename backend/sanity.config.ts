@@ -5,9 +5,9 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'web_base',
+  title: 'Setgo',
 
-  projectId: '9jaltgzm',
+  projectId: '3znejphh',
   dataset: 'production',
 
   plugins: [
