@@ -11,6 +11,12 @@ module.exports = async function() {
     publishedAt,
     "categories": categories[]->title,
     "categoriesSlug": categories[]->slug,
+    "categoriesColorLight": categories[]->catcolorlight{"color": hex},
+    "categoriesColorDark": categories[]->catcolordark{"color": hex},
+    gallery[]{
+      "media": asset->{url},
+      "alt": asset->{alt},
+    },
     body[]{
       ...,
       _type == 'image' => {
@@ -20,9 +26,57 @@ module.exports = async function() {
         }
       }
     },
-    mainImage{
+    charateristics[]{
+      ...,
+      _type == 'image' => {
+        "image": asset->{
+          url,
+          "alt": altText
+        }
+      }
+    },
+    quantity[]{
+      ...,
+      _type == 'image' => {
+        "image": asset->{
+          url,
+          "alt": altText
+        }
+      }
+    },
+    colorEbc,
+    colorL,
+    humedad,
+    extractoDb,
+    proteinas,
+    fiabilidad,
+    glucanos,
+    tbImage{
       "media": asset->{url},
       "alt": asset->{altText}
+    },
+    tbIcon{
+      "media": asset->{url},
+      "alt": asset->{altText}
+    },
+    moreProds{
+      "relativeProducts": relativeProducts[]->{
+        title,
+        slug,
+        publishedAt,
+        "categories": categories[]->title,
+        "categoriesSlug": categories[]->slug,
+        "categoriesColorLight": categories[]->catcolorlight{"color": hex},
+        "categoriesColorDark": categories[]->catcolordark{"color": hex},
+        tbImage{
+          "media": asset->{url},
+          "alt": asset->{altText}
+        },
+        tbIcon{
+          "media": asset->{url},
+          "alt": asset->{altText}
+        },
+      }
     },
   }`);
 

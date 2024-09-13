@@ -1,24 +1,10 @@
-#section__hero{
-    background-color: var(--color-secondary);
-    padding-top: calc(60px + 5%);
-    h1{
-        color: var(--color-accent);
+#section__intro{
+    .col__left{
+        padding-right: 10%;
     }
     h2{
-        color: var(--color-white);
+        color: var(--color-accent);
     }
-    h2 strong{
-        color: var(--color-primary-light);
-        font-weight: unset;
-    }
-    p{
-        color: var(--color-white);
-        font-size: var(--size-md);
-    }
-}
-
-#section__intro .col__left{
-    padding-right: 15%;
 }
 
 form{

@@ -45,4 +45,28 @@ function gsapSoloAnimations() {
         ease: "power1.out"
     }, "-=0.8")
 
+
+
+    // Animacion granos:
+
+    gsap.to(".grano1", {
+        rotate: 180,
+        scrollTrigger: {
+            trigger: "#section__intro",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+        },
+    })
+
+    gsap.to(".grano2", {
+        rotate: -180,
+        scrollTrigger: {
+            trigger: "#section__intro",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+        },
+    })
+
 }

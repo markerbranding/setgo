@@ -17,11 +17,15 @@
     <link rel="stylesheet" href="/css/general/globals.css">
     <link rel="stylesheet" href="/css/general/nav.css">
     <link rel="stylesheet" href="/css/general/footer.css">
+    <link rel="stylesheet" href="/css/general/splide.min.css">
     
     
     
     
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
     
 </head>
 <body data-barba="wrapper">
@@ -37,7 +41,7 @@
 <div class="transition__top"></div>
 <div class="transition__bottom"></div>
 
-    <header id="header" class="pad__lr__5">
+    <header id="header" class="pad__lr__10">
     
     <div id="inner__header">
         <a id="logo__main" href="/">
@@ -53,20 +57,20 @@
         </li>
     
         <li>
-            <a href="/productos/" class="" >
-                Productos
-            </a>
-        </li>
-    
-        <li>
             <a href="/nosotros/" class="" >
                 Nosotros
             </a>
         </li>
     
         <li>
+            <a href="/productos/" class="" >
+                Maltas
+            </a>
+        </li>
+    
+        <li>
             <a href="/articulos/1/" class="" >
-                Blog
+                Noticias
             </a>
         </li>
     
@@ -97,20 +101,20 @@
         </li>
     
         <li>
-            <a href="/productos/" class="" >
-                Productos
-            </a>
-        </li>
-    
-        <li>
             <a href="/nosotros/" class="" >
                 Nosotros
             </a>
         </li>
     
         <li>
+            <a href="/productos/" class="" >
+                Maltas
+            </a>
+        </li>
+    
+        <li>
             <a href="/articulos/1/" class="" >
-                Blog
+                Noticias
             </a>
         </li>
     
@@ -134,54 +138,505 @@
     
 
 
-    <section id="section__hero" class="pad__lr__5">
+    <section id="section__hero" class="pad__lr__10">
         <div class="column__2">
             <div class="col__left flex__justify__c pad__right__5 width__45">            
                 <h1>Comercializadora de maltas de calidad</h1>
-                <div><p><strong>Maltas seleccionadas</strong> para cervezas únicas y memorables.</p></div>
+                <div><h2><strong>Maltas seleccionadas</strong> para cervezas únicas y memorables.</h2></div>
                 <p></p>
                 <a class="btn btn__hero">Descubre más</a>
             </div>
             <div class="col__right width__55">
+                <div id="carrusel__hero" class="splide" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                      <ul class="splide__list">
+                        <li class="splide__slide">
+                            <img class="image" src="/images/inicio/home_hero_bohemian_pilsner.png" alt="image">
+                            <div class="tooltip">
+                                <p>Bohemian Pilsner</p>
+                                <a class="btn__mini" href="">Ver más</a>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <img class="image" src="/images/inicio/home_hero_light_munich.png" alt="image">
+                            <div class="tooltip">
+                                <p>Light Munich</p>
+                              <a class="btn__mini" href="">Ver más</a>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <img class="image" src="/images/inicio/home_hero_vienna.png" alt="image">
+                            <div class="tooltip">
+                                <p>Vienna</p>
+                              <a class="btn__mini" href="#">Ver más</a>
+                            </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="section__intro" class="pad__lr__10 pad__tb__10 fadeInOut">
+        <div class="column__1 max1400 flex__align__c">
+            <h3 class="identificador">Sobre SETGO</h3>
+            <h2>Bienvenido al lugar donde nace el verdadero sabor de lo natural</h2>
+        </div>
+        <div class="column__2">
+            <div class="col__left width__45">
+                <img class="grano grano1" src="/images/home_grano1.png" data-speed="1.2" />
+                <img class="grano grano2" src="/images/home_grano2.png" data-speed="0.8" />
+                
+                    <picture class="img__anim intro__img radius__30">
+                        
+                        <source srcset="/images/F7sQRQC_8c-300.jpeg 300w, /images/F7sQRQC_8c-600.jpeg 600w, /images/F7sQRQC_8c-800.jpeg 800w" sizes="(max-width: 900px) 100vw, 900px" type="image/jpeg">
+                        
+                        <source srcset="/images/F7sQRQC_8c-300.webp 300w, /images/F7sQRQC_8c-600.webp 600w, /images/F7sQRQC_8c-800.webp 800w" sizes="(max-width: 900px) 100vw, 900px" type="image/webp">
+                        
+                        <img src="/images/F7sQRQC_8c-300.jpeg" alt="">
+                    </picture>
                 
             </div>
+            <div class="col__right width__55">
+                <div><h4>Quiénes somos</h4><p>Somos <strong>SETGO</strong>, una compañía dedicada a proveer a los cerveceros mexicanos maltas premium que garantizan resultados excepcionales en cada lote.</p><ul><li>Lorem ipsum dolor sit amet consectetur.</li><li>Lorem ipsum dolor sit amet consectetur.</li><li>Lorem ipsum dolor sit amet consectetur.</li></ul></div>
+                <a href="/nosotros/" class="btn btn__hero">Más de nosotros</a>
+            </div>
         </div>
     </section>
 
 
-    <section id="section__intro" class="pad__all__5 fadeInOut">
+    <section id="section__video" class="pad__lr__10">
+        <img class="img__video__bg" src="/images/home_video.jpg" />
         <div class="column__2">
-            <div class="col__left width__40">
-                <h3>Sobre SETGO</h3>
-                <h2>Bienvenido al lugar donde nace el verdadero sabor de lo natural</h2>
+            <div class="grid__video"><span></span><span></span><span></span><span></span></div>
+            <div class="col__left width__60">
+                <h2>Descubre el poder de nuestras maltas importadas</h2>
             </div>
-            <div class="col__right width__60">
-                <div><p>Somos <strong>SETGO</strong>, una compañía dedicada a proveer a los cerveceros mexicanos maltas premium que garantizan resultados excepcionales en cada lote.</p><p>Lorem ipsum dolor sit amet consectetur.</p><p>Lorem ipsum dolor sit amet consectetur.</p><p>Lorem ipsum dolor sit amet consectetur.</p></div>
-                <a class="btn btn__hero">Más de nosotros</a>
-                <div class="column__2 mar__top__5">
-                    <div class="col__left flex__justify__sb width__30">
-                        
-                    </div>
-                    <div class="col__right width__70 pad__left__5">
-                        
-                    </div>
-                </div>
+            <div class="col__right width__40">
+                <a class="video__btn">
+                    <img src="/images/play_button.svg" alt="Maltas de calidad"/>
+                    Mirar video
+                </a>
             </div>
         </div>
     </section>
 
 
-    <section id="section__productos" class="pad__all__5">
-        <div class="column__1">
-            <h2>Productos destacados</h2>
+    <section id="section__productos" class="pad__lr__10 pad__tb__5">
+        <div class="column__1 max1400 flex__align__c">
+            <h3 class="identificador">Productos destacados</h3>
+            <h2>Maltas de máxima calidad</h2>
             <ul role="list" class="listado__x3 width__100 pad__top__5">
+                
+                    
+<li class="card card__producto" >
+  <a class="card__pic" href="/productos/premium-bohemian-pilsner-malt">
+    
+      <picture>
+          
+          <source srcset="/images/ZX4Yq9V6fO-300.png 300w, /images/ZX4Yq9V6fO-400.png 400w" sizes="(max-width: 600px) 100vw, 600px" type="image/png">
+          
+          <source srcset="/images/ZX4Yq9V6fO-300.webp 300w, /images/ZX4Yq9V6fO-400.webp 400w" sizes="(max-width: 600px) 100vw, 600px" type="image/webp">
+          
+          <img src="/images/ZX4Yq9V6fO-300.png" alt="">
+      </picture>
+    
+  </a>
+
+  
+    
+      <div class="card__data" style="background-color: #d2e3b8;">
+    
+  
+
+  
+    
+      <div class="card__border" style="background-color: #2a934d;"></div>
+    
+
+      
+      <div class="card__icon" style="background-color: #2a934d;"><img src="https://cdn.sanity.io/images/3znejphh/production/eaceef48b2d0ae18840015d00425a5e81ad43cdc-100x100.svg" alt="Premium Bohemian Pilsner Malt" /></div>
+      
+
+
+      
+      
+        <span class="card__category">
+          <a style="color: #2a934d;" href="/productos/categorias/sekado">
+            Sekado
+          </a>
+        </span>
+        
+      
+
+
+
+    
+    
+
+
+    <a class="card__title" href="/productos/premium-bohemian-pilsner-malt">Premium Bohemian Pilsner Malt</a>
+    <a class="btn btn__gray" href="/productos/premium-bohemian-pilsner-malt">Conoce más</a>
+
+  </div>
+</li>
+                
+                    
+<li class="card card__producto" >
+  <a class="card__pic" href="/productos/vienna-malt">
+    
+      <picture>
+          
+          <source srcset="/images/wCYPLJDO8z-300.png 300w, /images/wCYPLJDO8z-400.png 400w" sizes="(max-width: 600px) 100vw, 600px" type="image/png">
+          
+          <source srcset="/images/wCYPLJDO8z-300.webp 300w, /images/wCYPLJDO8z-400.webp 400w" sizes="(max-width: 600px) 100vw, 600px" type="image/webp">
+          
+          <img src="/images/wCYPLJDO8z-300.png" alt="">
+      </picture>
+    
+  </a>
+
+  
+    
+      <div class="card__data" style="background-color: #d5d6e3;">
+    
+  
+
+  
+    
+      <div class="card__border" style="background-color: #21266d;"></div>
+    
+
+      
+      <div class="card__icon" style="background-color: #21266d;"><img src="https://cdn.sanity.io/images/3znejphh/production/771fea70dd6758e65f4d7d2b870c290ffebc0ddf-100x100.svg" alt="Vienna Malt" /></div>
+      
+
+
+      
+      
+        <span class="card__category">
+          <a style="color: #21266d;" href="/productos/categorias/sophus-fuglsang">
+            Sophus Fuglsang
+          </a>
+        </span>
+        
+      
+
+
+
+    
+    
+
+
+    <a class="card__title" href="/productos/vienna-malt">Vienna Malt</a>
+    <a class="btn btn__gray" href="/productos/vienna-malt">Conoce más</a>
+
+  </div>
+</li>
+                
+                    
+<li class="card card__producto" >
+  <a class="card__pic" href="/productos/munich-malt">
+    
+      <picture>
+          
+          <source srcset="/images/Fvs6oXiwQx-300.png 300w, /images/Fvs6oXiwQx-400.png 400w" sizes="(max-width: 600px) 100vw, 600px" type="image/png">
+          
+          <source srcset="/images/Fvs6oXiwQx-300.webp 300w, /images/Fvs6oXiwQx-400.webp 400w" sizes="(max-width: 600px) 100vw, 600px" type="image/webp">
+          
+          <img src="/images/Fvs6oXiwQx-300.png" alt="">
+      </picture>
+    
+  </a>
+
+  
+    
+      <div class="card__data" style="background-color: #d2e3b8;">
+    
+  
+
+  
+    
+      <div class="card__border" style="background-color: #2a934d;"></div>
+    
+
+      
+      <div class="card__icon" style="background-color: #2a934d;"><img src="https://cdn.sanity.io/images/3znejphh/production/b615f207cc572b4921e6c54a20d135f8ac0b912e-100x100.svg" alt="Munich Malt" /></div>
+      
+
+
+      
+      
+        <span class="card__category">
+          <a style="color: #2a934d;" href="/productos/categorias/sekado">
+            Sekado
+          </a>
+        </span>
+        
+      
+
+
+
+    
+    
+
+
+    <a class="card__title" href="/productos/munich-malt">Munich Malt</a>
+    <a class="btn btn__gray" href="/productos/munich-malt">Conoce más</a>
+
+  </div>
+</li>
+                
+            </ul>
+            <a class="btn mar__top__5">Ver maltas por marca</a>
+        </div>
+    </section>
+
+
+    <section id="section__blog" class="pad__lr__10">
+        <div class="column__1 flex__align__c pad__tb__5">
+            <h3 class="identificador">Noticias destacadas</h3>
+            <h2>Artículos que te pueden interesar</h2>
+            <ul role="list" class="listado__x4 width__100 pad__top__5">
+                
+                    <li class="card card__articulo">
+  
+  <span class="card__date">agosto 5, 2024</span>
+    
+    
+    
+    <a class="card__pic" href="/articulos/somos-tradicion-y-calidad-en-maltas-para-cervecerias-mexicanas">
+    
+      <picture>
+          
+          <source srcset="/images/paCivp__1u-300.jpeg 300w, /images/paCivp__1u-600.jpeg 600w, /images/paCivp__1u-900.jpeg 900w, /images/paCivp__1u-1200.jpeg 1200w, /images/paCivp__1u-1800.jpeg 1800w" sizes="(max-width: 600px) 100vw, 600px" type="image/jpeg">
+          
+          <source srcset="/images/paCivp__1u-300.webp 300w, /images/paCivp__1u-600.webp 600w, /images/paCivp__1u-900.webp 900w, /images/paCivp__1u-1200.webp 1200w, /images/paCivp__1u-1800.webp 1800w" sizes="(max-width: 600px) 100vw, 600px" type="image/webp">
+          
+          <img src="/images/paCivp__1u-300.jpeg" alt="">
+      </picture>
+    
+    </a>
+
+    
+      <span class="card__category">
+        
+          <a href="/articulos/categorias/noticias">Noticias</a>
+        
+      </span>
+    
+
+    <a class="blog__title" href="/articulos/somos-tradicion-y-calidad-en-maltas-para-cervecerias-mexicanas">Somos tradición y calidad en maltas para cervecerías mexicanas</a>
+
+    
+    
+    <p class="excerpt__p">Cervezas auténticas que sobresalen por sus sabores y aromas, es lo que ofrece la marca Sekado, especializada en insumos de cerveza checa que en México es distribuida por SETGO (Soluciones Empresariales y Tecnológicas González), que tiene disponibles tres variedades: Bohemian Pils, Vienna y Munich.</p>
+    <a class="btn btn__gray" href="/articulos/somos-tradicion-y-calidad-en-maltas-para-cervecerias-mexicanas">Continuar leyendo</a>
+  </li>
+                
+                    <li class="card card__articulo">
+  
+  <span class="card__date">agosto 5, 2024</span>
+    
+    
+    
+    <a class="card__pic" href="/articulos/somos-tradicion-y-calidad-en-maltas-para-cervecerias-mexicanas">
+    
+      <picture>
+          
+          <source srcset="/images/paCivp__1u-300.jpeg 300w, /images/paCivp__1u-600.jpeg 600w, /images/paCivp__1u-900.jpeg 900w, /images/paCivp__1u-1200.jpeg 1200w, /images/paCivp__1u-1800.jpeg 1800w" sizes="(max-width: 600px) 100vw, 600px" type="image/jpeg">
+          
+          <source srcset="/images/paCivp__1u-300.webp 300w, /images/paCivp__1u-600.webp 600w, /images/paCivp__1u-900.webp 900w, /images/paCivp__1u-1200.webp 1200w, /images/paCivp__1u-1800.webp 1800w" sizes="(max-width: 600px) 100vw, 600px" type="image/webp">
+          
+          <img src="/images/paCivp__1u-300.jpeg" alt="">
+      </picture>
+    
+    </a>
+
+    
+      <span class="card__category">
+        
+          <a href="/articulos/categorias/noticias">Noticias</a>
+        
+      </span>
+    
+
+    <a class="blog__title" href="/articulos/somos-tradicion-y-calidad-en-maltas-para-cervecerias-mexicanas">Somos tradición y calidad en maltas para cervecerías mexicanas</a>
+
+    
+    
+    <p class="excerpt__p">Cervezas auténticas que sobresalen por sus sabores y aromas, es lo que ofrece la marca Sekado, especializada en insumos de cerveza checa que en México es distribuida por SETGO (Soluciones Empresariales y Tecnológicas González), que tiene disponibles tres variedades: Bohemian Pils, Vienna y Munich.</p>
+    <a class="btn btn__gray" href="/articulos/somos-tradicion-y-calidad-en-maltas-para-cervecerias-mexicanas">Continuar leyendo</a>
+  </li>
+                
+                    <li class="card card__articulo">
+  
+  <span class="card__date">agosto 5, 2024</span>
+    
+    
+    
+    <a class="card__pic" href="/articulos/somos-tradicion-y-calidad-en-maltas-para-cervecerias-mexicanas">
+    
+      <picture>
+          
+          <source srcset="/images/paCivp__1u-300.jpeg 300w, /images/paCivp__1u-600.jpeg 600w, /images/paCivp__1u-900.jpeg 900w, /images/paCivp__1u-1200.jpeg 1200w, /images/paCivp__1u-1800.jpeg 1800w" sizes="(max-width: 600px) 100vw, 600px" type="image/jpeg">
+          
+          <source srcset="/images/paCivp__1u-300.webp 300w, /images/paCivp__1u-600.webp 600w, /images/paCivp__1u-900.webp 900w, /images/paCivp__1u-1200.webp 1200w, /images/paCivp__1u-1800.webp 1800w" sizes="(max-width: 600px) 100vw, 600px" type="image/webp">
+          
+          <img src="/images/paCivp__1u-300.jpeg" alt="">
+      </picture>
+    
+    </a>
+
+    
+      <span class="card__category">
+        
+          <a href="/articulos/categorias/noticias">Noticias</a>
+        
+      </span>
+    
+
+    <a class="blog__title" href="/articulos/somos-tradicion-y-calidad-en-maltas-para-cervecerias-mexicanas">Somos tradición y calidad en maltas para cervecerías mexicanas</a>
+
+    
+    
+    <p class="excerpt__p">Cervezas auténticas que sobresalen por sus sabores y aromas, es lo que ofrece la marca Sekado, especializada en insumos de cerveza checa que en México es distribuida por SETGO (Soluciones Empresariales y Tecnológicas González), que tiene disponibles tres variedades: Bohemian Pils, Vienna y Munich.</p>
+    <a class="btn btn__gray" href="/articulos/somos-tradicion-y-calidad-en-maltas-para-cervecerias-mexicanas">Continuar leyendo</a>
+  </li>
+                
+                    <li class="card card__articulo">
+  
+  <span class="card__date">agosto 5, 2024</span>
+    
+    
+    
+    <a class="card__pic" href="/articulos/somos-tradicion-y-calidad-en-maltas-para-cervecerias-mexicanas">
+    
+      <picture>
+          
+          <source srcset="/images/paCivp__1u-300.jpeg 300w, /images/paCivp__1u-600.jpeg 600w, /images/paCivp__1u-900.jpeg 900w, /images/paCivp__1u-1200.jpeg 1200w, /images/paCivp__1u-1800.jpeg 1800w" sizes="(max-width: 600px) 100vw, 600px" type="image/jpeg">
+          
+          <source srcset="/images/paCivp__1u-300.webp 300w, /images/paCivp__1u-600.webp 600w, /images/paCivp__1u-900.webp 900w, /images/paCivp__1u-1200.webp 1200w, /images/paCivp__1u-1800.webp 1800w" sizes="(max-width: 600px) 100vw, 600px" type="image/webp">
+          
+          <img src="/images/paCivp__1u-300.jpeg" alt="">
+      </picture>
+    
+    </a>
+
+    
+      <span class="card__category">
+        
+          <a href="/articulos/categorias/noticias">Noticias</a>
+        
+      </span>
+    
+
+    <a class="blog__title" href="/articulos/somos-tradicion-y-calidad-en-maltas-para-cervecerias-mexicanas">Somos tradición y calidad en maltas para cervecerías mexicanas</a>
+
+    
+    
+    <p class="excerpt__p">Cervezas auténticas que sobresalen por sus sabores y aromas, es lo que ofrece la marca Sekado, especializada en insumos de cerveza checa que en México es distribuida por SETGO (Soluciones Empresariales y Tecnológicas González), que tiene disponibles tres variedades: Bohemian Pils, Vienna y Munich.</p>
+    <a class="btn btn__gray" href="/articulos/somos-tradicion-y-calidad-en-maltas-para-cervecerias-mexicanas">Continuar leyendo</a>
+  </li>
                 
             </ul>
         </div>
     </section>
 
 
+    <section id="section__testimonios">
+        <div class="column__1 pad__lr__10 pad__top__5">
+            <h3 class="identificador">Testimonios</h3>
+            <h2>Qué opinan nuestros clientes</h2>
+        </div>
+        <div class="column__1 draggable pad__tb__10 pad__lr__5">
+            <div class="testimonio">
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
+                </div>
+                <div>
+                    <img src="/images/sello.svg" />
+                    <span>Nombre de la persona</span>
+                </div>
+            </div>
+            <div class="testimonio">
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
+                </div>
+                <div>
+                    <img src="/images/sello.svg" />
+                    <span>Nombre de la persona</span>
+                </div>
+            </div>
+            <div class="testimonio">
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
+                </div>
+                <div>
+                    <img src="/images/sello.svg" />
+                    <span>Nombre de la persona</span>
+                </div>
+            </div>
+            <div class="testimonio">
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
+                </div>
+                <div>
+                    <img src="/images/sello.svg" />
+                    <span>Nombre de la persona</span>
+                </div>
+            </div>
+            <div class="testimonio">
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
+                </div>
+                <div>
+                    <img src="/images/sello.svg" />
+                    <span>Nombre de la persona</span>
+                </div>
+            </div>
+            <div class="testimonio">
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
+                </div>
+                <div>
+                    <img src="/images/sello.svg" />
+                    <span>Nombre de la persona</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section__footer__divisor">
+    <img class="img__footer__bg" src="/images/footer_contact.jpg" />
+    <div class="column__1">
+        <h2>Contáctanos para más información</h2>
+        <a class="btn" href="#">Contactar ahora</a>
+    </div>
+</section>
+
+
 </div>
+
+<script>
+    document.addEventListener( 'DOMContentLoaded', function() {
+
+        var splide = new Splide( '.splide',{
+            heightRatio: 1,
+            direction: 'ttb',
+            perPage: 1,
+            focus: 'center',
+            arrows: true,
+            type: 'loop',
+            autoplay: true,
+        } );
+
+        splide.mount();
+
+    });
+</script>
             </main>
             <footer>
     <div class="column__1 listado__x4">
@@ -196,20 +651,20 @@
         </li>
     
         <li>
-            <a href="/productos/" class="" >
-                Productos
-            </a>
-        </li>
-    
-        <li>
             <a href="/nosotros/" class="" >
                 Nosotros
             </a>
         </li>
     
         <li>
+            <a href="/productos/" class="" >
+                Maltas
+            </a>
+        </li>
+    
+        <li>
             <a href="/articulos/1/" class="" >
-                Blog
+                Noticias
             </a>
         </li>
     
@@ -259,12 +714,15 @@
 </footer>
         </div>
     </div>
-
+    
+    <script src="/js/splide.min.js"></script>
     <script src="/js/loader.js"></script>
+    
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://unpkg.com/@barba/css"></script>
     <script src="/js/main.min.js"></script>
     <script src="/js/base.js"></script>
+    
     
 
 </body>

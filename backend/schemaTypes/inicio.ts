@@ -17,7 +17,7 @@ export default {
         },
         {
             name: 'prod',
-            title: 'Productos recientes',
+            title: 'Destacados',
         },
     ],
     fields: [
@@ -112,26 +112,30 @@ export default {
             },
         },
         {
-            name: 'introImg2',
-            title: 'Imagen secundaria para la introducción',
-            type: 'image',
-            group: 'intro',
-            options: {
-                hotspot: true,
-            },
-        },
-        {
             name: 'recentProdRef',
             type: 'object',
             group: 'prod',
             fields: [
               {
-                title: 'Productos recientes',
+                title: 'Maltas destacadas',
                 name: 'recentProducts',
                 type: 'array',  // Cambiado de 'reference' a 'array'
                 of: [{type: 'reference', to: [{type: 'products'}]}]  // Especifica que es un array de referencias
               }
             ]
-          }
+        },
+        {
+            name: 'recentBlogRef',
+            type: 'object',
+            group: 'prod',
+            fields: [
+              {
+                title: 'Noticias destacadas',
+                name: 'recentBlogs',
+                type: 'array',  // Cambiado de 'reference' a 'array'
+                of: [{type: 'reference', to: [{type: 'post'}]}]  // Especifica que es un array de referencias
+              }
+            ]
+        }
     ]
   }

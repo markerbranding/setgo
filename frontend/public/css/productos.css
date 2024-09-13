@@ -1,27 +1,31 @@
-#inner__header .nav__ul li:nth-child(2) a{
+#inner__header .nav__ul li:nth-child(3) a{
     color: var(--color-accent);
 }
 
-#inner__header .nav__ul li:nth-child(2) a::before{
+#inner__header .nav__ul li:nth-child(3) a::before{
     display: block;
 }
 
 #section__hero{
-    background-color: var(--color-secondary);
+    background-color: var(--color-secondary-light);
     padding-top: calc(60px + 5%);
     h1{
-        color: var(--color-accent);
+        color: var(--color-secondary);
     }
     h2{
-        color: var(--color-white);
+        color: var(--color-primary);
     }
     h2 strong{
         color: var(--color-primary-light);
         font-weight: unset;
     }
     p{
-        color: var(--color-white);
+        color: var(--color-primary);
         font-size: var(--size-md);
+    }
+    .column__1{
+        text-align: center;
+        align-items: center;
     }
 }
 

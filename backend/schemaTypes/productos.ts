@@ -1,6 +1,6 @@
 export default {
     name: 'productos',
-    title: 'Productos',
+    title: 'Maltas',
     type: 'document',
     groups: [
         {
@@ -60,15 +60,6 @@ export default {
             title: 'Texto del botón',
             type: 'string',
             group: 'hero'
-        },
-        {
-            name: 'heroImg',
-            title: 'Imagen principal',
-            type: 'image',
-            group: 'hero',
-            options: {
-                hotspot: true,
-            },
         },
     ]
   }

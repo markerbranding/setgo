@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'category',
-  title: 'Categorías de producto',
+  title: 'Marcas',
   type: 'document',
   groups: [
     {
@@ -52,6 +52,18 @@ export default defineType({
         source: 'title',
         maxLength: 96,
       },
+      group: 'category'
+    }),
+    defineField({
+      name: 'catcolorlight',
+      title: 'Color claro de la marca',
+      type: 'color',
+      group: 'category'
+    }),
+    defineField({
+      name: 'catcolordark',
+      title: 'Color oscuro de la marca',
+      type: 'color',
       group: 'category'
     }),
   ],

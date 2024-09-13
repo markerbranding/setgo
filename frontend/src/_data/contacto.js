@@ -6,14 +6,6 @@ module.exports = async function() {
     titleseo,
     descseo,
     keyseo,
-    heroH1,
-    heroH2,
-    heroP,
-    heroBtn,
-    heroImg{
-      "media": asset->{url},
-      "alt": asset->{altText}
-    },
     introH3,
     introH2,
     introRichText,

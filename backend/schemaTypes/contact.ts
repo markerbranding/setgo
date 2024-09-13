@@ -8,10 +8,6 @@ export default {
             title: 'SEO',
         },
         {
-            name: 'hero',
-            title: 'Hero',
-        },
-        {
             name: 'intro',
             title: 'Introducción',
         },
@@ -39,40 +35,6 @@ export default {
             type: 'text',
             description: '*Separar palabras con comas',
             group: 'seo'
-        },
-        {
-            name: 'heroH1',
-            title: 'Subtítulo de apertura',
-            type: 'string',
-            group: 'hero'
-          },
-          {
-            name: 'heroH2',
-            title: 'Título principal',
-            type: 'blockContent',
-            group: 'hero',
-            description: '*Agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)'
-        },
-        {
-            name: 'heroP',
-            title: 'Descripción',
-            type: 'text',
-            group: 'hero'
-        },
-        {
-            name: 'heroBtn',
-            title: 'Texto del botón',
-            type: 'string',
-            group: 'hero'
-        },
-        {
-            name: 'heroImg',
-            title: 'Imagen principal',
-            type: 'image',
-            group: 'hero',
-            options: {
-                hotspot: true,
-            },
         },
         {
             name: 'introH3',

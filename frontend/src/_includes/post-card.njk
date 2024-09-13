@@ -1,23 +1,8 @@
-<li class="card card__artículo">
+<li class="card card__articulo">
   
-    <div class="column__2">
-      <div class="col__left">
-        {% if item.categories %}
-          <span class="card__category">
-            {% for category in item.categories %}
-              <a href="/articulos/categorias/{{category | slugify}}">{{ category }}{% if not loop.last %}, {% endif %}</a> /
-            {% endfor %}
-          </span>
-        {% else %}
-          <span class="card__category">Sin categoría /</span>
-        {% endif %}
-      </div>
-      <div class="col__right flex__align__e">
-        <span class="card__date">{{ item.publishedAt | date("MMMM d, yyyy") }}</span>
-      </div>
-    </div>
+  <span class="card__date">{{ item.publishedAt | date("MMMM d, yyyy") }}</span>
     
-    <h2><a href="/articulos/{{ item.slug.current }}">{{ item.title }}</a></h2>
+    
     
     <a class="card__pic" href="/articulos/{{ item.slug.current }}">
     {% if item.mainImage %}
@@ -31,7 +16,21 @@
       <p>No image available</p>
     {% endif %}
     </a>
+
+    {% if item.categories %}
+      <span class="card__category">
+        {% for category in item.categories %}
+          <a href="/articulos/categorias/{{category | slugify}}">{{ category }}{% if not loop.last %}, {% endif %}</a>
+        {% endfor %}
+      </span>
+    {% else %}
+      <span class="card__category">Sin categoría</span>
+    {% endif %}
+
+    <a class="blog__title" href="/articulos/{{ item.slug.current }}">{{ item.title }}</a>
+
+    
     
     <p class="excerpt__p">{{ item.excerpt }}</p>
-    <a class="btn" href="/articulos/{{ item.slug.current }}">Más información</a>
+    <a class="btn btn__gray" href="/articulos/{{ item.slug.current }}">Continuar leyendo</a>
   </li>

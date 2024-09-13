@@ -4,7 +4,6 @@ eleventyComputed:
     description: "{{ productos[0].descseo }}"
     keywords: "{{ productos[0].keyseo }}"
 layout: base.njk
-# gsap: producto.js
 pagination:
   data: collections.productos
   size: 1
@@ -12,15 +11,58 @@ pagination:
 permalink: "/productos/{{ producto.slug.current }}/"
 ---
 
-<div data-barba="container" data-barba-namespace="producto" data-css="producto" data-css="producto">
+<div data-barba="container" data-barba-namespace="producto" data-css="producto" data-js="producto">
 
-  <section id="section__hero" class="pad__lr__5 pad__top__10">
-    <div class="column__1 max1400">
-      <span class="categoria_producto">Tipo de producto: <a href="/productos/categorias/{{producto.categories | slugify}}">{{ producto.categories | join(", ") }}</a></span>
-      <h1>{{ producto.title }}</h1>
+  <section id="section__hero" class="pad__lr__10 pad__bottom__5">
+    <div class="column__2">
+      <div class="col__left">
+
+        
+        <div class="splide" aria-labelledby="carousel-heading">
+
+          <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev" style="background-color: {{producto.categoriesColorDark[0].color}};">
+              <img src="/images/arrow_white.svg"/>
+            </button>
+            <button class="splide__arrow splide__arrow--next" style="background-color: {{producto.categoriesColorDark[0].color}}; border: 3px solid {{producto.categoriesColorDark[0].color}};">
+              <img src="/images/arrow_white.svg"/>
+            </button>
+          </div>
+
+          <div class="splide__track">
+            <ul class="splide__list">
+                {% for item in producto.gallery %}
+                <li class="splide__slide">
+                <picture>
+                    {% for format, images in item %}
+                    <source srcset="{{ images | srcset }}" sizes="(max-width: 1200px) 100vw, 1200px" type="image/{{ format }}">
+                    {% endfor %}
+                    <img src="{{ item.webp[0].url }}" alt="{{ producto.gallery.altText }}">
+                </picture>
+              </li>
+                {% endfor %}
+            </ul>
+          </div>
+          <div class="splide__bg" style="background-color: {{producto.categoriesColorLight[0].color}};"></div>
+
+        </div>
+
+      </div>
+      <div class="col__right">
+        <span class="categoria_producto" style="color: {{producto.categoriesColorDark[0].color}}; background-color: {{producto.categoriesColorLight[0].color}};">Marca: <a href="/productos/categorias/{{producto.categories | slugify}}">{{ producto.categories | join(", ") }}</a></span>
+        <h1>{{ producto.title }}</h1>
+        <span class="sku">SKU: SEK-BPIL</span>
+        <div class="malta__descripcion">
+          <h3 style="color: {{producto.categoriesColorDark[0].color}};">Descripción</h3>
+          {{ producto.body | safe }}
+        </div>
+        <a class="btn" style="background-color: {{producto.categoriesColorDark[0].color}} !important;">Ver características</a>
+      </div>
+      
     </div>
   </section>
 
+  <!--
   <section id="section__main__image">
     <div class="column__1 max1400">
       {% if producto.mainImage %}
@@ -33,12 +75,70 @@ permalink: "/productos/{{ producto.slug.current }}/"
       {% endif %}
     </div>
   </section>
+  -->
 
-  <section id="section__body" class="pad__all__5">
-    <div class="column__1 max1400">
-      <h3>Descripción</h3>
-      {{ producto.body | safe }}
+  <section id="section__body" class="pad__lr__10 pad__tb__5">
+    <div class="column__2">
+      <div class="col__left">
+        <h2 style="color: {{producto.categoriesColorDark[0].color}};">Características</h2>
+        {{ producto.charateristics | safe }}
+        <h2 class="border__top" style="color: {{producto.categoriesColorDark[0].color}};">Cantidad</h2>
+        {{ producto.quantity | safe }}
+      </div>
+      <div class="col__right">
+        <div class="about__product">
+          <h2 style="color: {{producto.categoriesColorDark[0].color}};">Sobre el producto</h2>
+          <ul>
+            {% if producto.colorEbc %}<li><span>Color EBC</span><span>{{producto.colorEbc}}</span></li>{% endif %}
+            {% if producto.colorL %}<li><span>Color °L</span><span>{{producto.colorL}}</span></li>{% endif %}
+            {% if producto.humedad %}<li><span>Porcentaje de humedad</span><span>{{producto.humedad}}</span></li>{% endif %}
+            {% if producto.extractoDb %}<li><span>Porcentaje de extracto DB</span><span>{{producto.extractoDb}}</span></li>{% endif %}
+            {% if producto.proteinas %}<li><span>Porcentaje de proteínas</span><span>{{producto.proteinas}}</span></li>{% endif %}
+            {% if producto.fiabilidad %}<li><span>Fiabilidad</span><span>{{producto.fiabilidad}}</span></li>{% endif %}
+            {% if producto.glucanos %}<li><span>Beta-Glucanos mg/l</span><span>{{producto.glucanos}}</span></li>{% endif %}
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
+
+  <section id="section__productos" class="pad__lr__10 pad__tb__5">
+    <div class="column__1 max1400 flex__align__c">
+        <h3 class="identificador">Productos relacionados</h3>
+        <ul role="list" class="listado__x3 width__100 pad__top__5">
+            {% for item in producto.moreProds.relativeProducts %}
+                {% include "producto-card.njk" %}
+            {% endfor %}
+        </ul>
+    </div>
+  </section>
+
+
+  {% include 'pre-footer.njk' %}
+
+
 </div>
+
+
+
+
+
+<script>
+
+  document.addEventListener( 'DOMContentLoaded', function() {
+
+    var splide = new Splide( '.splide', {
+      heightRatio: 1,
+      direction: 'ttb',
+      perPage: 1,
+      focus: 'center',
+      arrows: true,
+      pagination: false,
+    } );
+
+    splide.mount();
+
+  });
+
+</script>

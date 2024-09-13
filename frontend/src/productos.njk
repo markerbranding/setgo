@@ -15,30 +15,18 @@ permalink: "/productos/" # Para paginación amplia descomentar: permalink: "/pro
 <div data-barba="container" data-barba-namespace="productos" data-css="productos" data-js="productos">
 
   {% for item in productos %}
-  <section id="section__hero" class="pad__lr__5">
-      <div class="column__2">
-          <div class="col__left flex__justify__c pad__right__5 width__45">            
-              <h1>{{ item.heroH1 }}</h1>
-              <div>{{ item.heroH2 | safe }}</div>
-              <p>{{ item.heroP }}</p>
-              <a class="btn btn__hero">{{ item.heroBtn }}</a>
-          </div>
-          <div class="col__right width__55">
-              {% if item.heroImg %}
-              <picture>
-                  {% for format, images in item.heroImg %}
-                  <source srcset="{{ images | srcset }}" sizes="(max-width: 1200px) 100vw, 1200px" type="image/{{ format }}">
-                  {% endfor %}
-                  <img src="{{ item.heroImg.jpeg[0].url }}" alt="{{ item.heroImgAlt }}">
-              </picture>
-              {% endif %}
-          </div>
+  <section id="section__hero" class="pad__lr__10 pad__bottom__5">
+      <div class="column__1 max1400">
+        <h1>{{ item.heroH1 }}</h1>
+        <div>{{ item.heroH2 | safe }}</div>
+        <p>{{ item.heroP }}</p>
+        <a class="btn btn__hero">{{ item.heroBtn }}</a>
       </div>
   </section>
   {% endfor %}
 
-  <section id="section__intro" class="pad__all__5">
-      <div class="column__1">
+  <section id="section__intro" class="pad__lr__10 pad__tb__5">
+      <div class="column__1 max1400">
           <h2>Productos</h2>
           <ul role="list" class="listado__x3 width__100">
               {%- for item in pagination.items -%}
@@ -48,6 +36,7 @@ permalink: "/productos/" # Para paginación amplia descomentar: permalink: "/pro
       </div>
   </section>
 
+  {% include 'pre-footer.njk' %}
 
   <!-- //Usar en caso de requerir paginación:
   <nav>

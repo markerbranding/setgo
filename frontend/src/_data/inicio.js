@@ -30,20 +30,41 @@ module.exports = async function() {
       "media": asset->{url},
       "alt": asset->{altText}
     },
-    introImg2{
-      "media": asset->{url},
-      "alt": asset->{altText}
-    },
     recentProdRef{
       "recentProducts": recentProducts[]->{
         title,
-    slug,
-    publishedAt,
-    "categories": categories[]->title,
-    mainImage{
-      "media": asset->{url},
-      "alt": asset->{altText}
+        slug,
+        publishedAt,
+        "categories": categories[]->title,
+        "categoriesSlug": categories[]->slug,
+        "categoriesColorLight": categories[]->catcolorlight{"color": hex},
+        "categoriesColorDark": categories[]->catcolordark{"color": hex},
+        tbImage{
+          "media": asset->{url},
+          "alt": asset->{altText}
+        },
+        tbIcon{
+          "media": asset->{url},
+          "alt": asset->{altText}
+        },
+        mainImage{
+          "media": asset->{url},
+          "alt": asset->{altText}
+        },
+      }
     },
+      recentBlogRef{
+      "recentBlogs": recentBlogs[]->{
+        title,
+        slug,
+        excerpt,
+        publishedAt,
+        "categories": categories[]->title,
+        "categoriesSlug": categories[]->slug,
+        mainImage{
+          "media": asset->{url},
+          "alt": asset->{altText}
+        },
       }
     }
   }`);

@@ -11,7 +11,7 @@ permalink: "/{{ page.fileSlug }}/"
     
 {% for item in inicio %}
 
-    <section id="section__hero" class="pad__lr__5">
+    <section id="section__hero" class="pad__lr__10">
         <div class="column__2">
             <div class="col__left flex__justify__c pad__right__5 width__45">            
                 <h1>{{ item.heroH1 }}</h1>
@@ -20,65 +20,190 @@ permalink: "/{{ page.fileSlug }}/"
                 <a class="btn btn__hero">{{ item.heroBtn }}</a>
             </div>
             <div class="col__right width__55">
-                {% if item.heroImg %}
-                <picture>
-                    {% for format, images in item.heroImg %}
-                    <source srcset="{{ images | srcset }}" sizes="(max-width: 1200px) 100vw, 1200px" type="image/{{ format }}">
-                    {% endfor %}
-                    <img src="{{ item.heroImg.jpeg[0].url }}" alt="{{ item.heroImgAlt }}">
-                </picture>
+                <div id="carrusel__hero" class="splide" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                      <ul class="splide__list">
+                        <li class="splide__slide">
+                            <img class="image" src="/images/inicio/home_hero_bohemian_pilsner.png" alt="image">
+                            <div class="tooltip">
+                                <p>Bohemian Pilsner</p>
+                                <a class="btn__mini" href="">Ver más</a>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <img class="image" src="/images/inicio/home_hero_light_munich.png" alt="image">
+                            <div class="tooltip">
+                                <p>Light Munich</p>
+                              <a class="btn__mini" href="">Ver más</a>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <img class="image" src="/images/inicio/home_hero_vienna.png" alt="image">
+                            <div class="tooltip">
+                                <p>Vienna</p>
+                              <a class="btn__mini" href="#">Ver más</a>
+                            </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="section__intro" class="pad__lr__10 pad__tb__10 fadeInOut">
+        <div class="column__1 max1400 flex__align__c">
+            <h3 class="identificador">{{ item.introH3 }}</h3>
+            <h2>{{ item.introH2 }}</h2>
+        </div>
+        <div class="column__2">
+            <div class="col__left width__45">
+                <img class="grano grano1" src="/images/home_grano1.png" data-speed="1.2" />
+                <img class="grano grano2" src="/images/home_grano2.png" data-speed="0.8" />
+                {% if item.introImg1 %}
+                    <picture class="img__anim intro__img radius__30">
+                        {% for format, images in item.introImg1 %}
+                        <source srcset="{{ images | srcset }}" sizes="(max-width: 900px) 100vw, 900px" type="image/{{ format }}">
+                        {% endfor %}
+                        <img src="{{ item.introImg1.jpeg[0].url }}" alt="{{ item.introImg1Alt }}">
+                    </picture>
                 {% endif %}
             </div>
-        </div>
-    </section>
-
-
-    <section id="section__intro" class="pad__all__5 fadeInOut">
-        <div class="column__2">
-            <div class="col__left width__40">
-                <h3>{{ item.introH3 }}</h3>
-                <h2>{{ item.introH2 }}</h2>
-            </div>
-            <div class="col__right width__60">
+            <div class="col__right width__55">
                 <div>{{ item.introRichText | safe }}</div>
-                <a class="btn btn__hero">{{ item.introBtn }}</a>
-                <div class="column__2 mar__top__5">
-                    <div class="col__left flex__justify__sb width__30">
-                        {% if item.introImg2 %}
-                        <picture>
-                            {% for format, images in item.introImg2 %}
-                            <source srcset="{{ images | srcset }}" sizes="(max-width: 600px) 100vw, 600px" type="image/{{ format }}">
-                            {% endfor %}
-                            <img src="{{ item.introImg2.jpeg[0].url }}" alt="{{ item.introImg2Alt }}">
-                        </picture>
-                        {% endif %}
-                    </div>
-                    <div class="col__right width__70 pad__left__5">
-                        {% if item.introImg1 %}
-                        <picture>
-                            {% for format, images in item.introImg1 %}
-                            <source srcset="{{ images | srcset }}" sizes="(max-width: 900px) 100vw, 900px" type="image/{{ format }}">
-                            {% endfor %}
-                            <img src="{{ item.introImg1.jpeg[0].url }}" alt="{{ item.introImg1Alt }}">
-                        </picture>
-                        {% endif %}
-                    </div>
-                </div>
+                <a href="/nosotros/" class="btn btn__hero">{{ item.introBtn }}</a>
             </div>
         </div>
     </section>
 
 
-    <section id="section__productos" class="pad__all__5">
-        <div class="column__1">
-            <h2>Productos destacados</h2>
+    <section id="section__video" class="pad__lr__10">
+        <img class="img__video__bg" src="/images/home_video.jpg" />
+        <div class="column__2">
+            <div class="grid__video"><span></span><span></span><span></span><span></span></div>
+            <div class="col__left width__60">
+                <h2>Descubre el poder de nuestras maltas importadas</h2>
+            </div>
+            <div class="col__right width__40">
+                <a class="video__btn">
+                    <img src="/images/play_button.svg" alt="Maltas de calidad"/>
+                    Mirar video
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="section__productos" class="pad__lr__10 pad__tb__5">
+        <div class="column__1 max1400 flex__align__c">
+            <h3 class="identificador">Productos destacados</h3>
+            <h2>Maltas de máxima calidad</h2>
             <ul role="list" class="listado__x3 width__100 pad__top__5">
                 {% for item in item.recentProdRef.recentProducts %}
                     {% include "producto-card.njk" %}
                 {% endfor %}
             </ul>
+            <a class="btn mar__top__5">Ver maltas por marca</a>
         </div>
     </section>
 
+
+    <section id="section__blog" class="pad__lr__10">
+        <div class="column__1 flex__align__c pad__tb__5">
+            <h3 class="identificador">Noticias destacadas</h3>
+            <h2>Artículos que te pueden interesar</h2>
+            <ul role="list" class="listado__x4 width__100 pad__top__5">
+                {% for item in item.recentBlogRef.recentBlogs %}
+                    {% include "post-card.njk" %}
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+
+    <section id="section__testimonios">
+        <div class="column__1 pad__lr__10 pad__top__5">
+            <h3 class="identificador">Testimonios</h3>
+            <h2>Qué opinan nuestros clientes</h2>
+        </div>
+        <div class="column__1 draggable pad__tb__10 pad__lr__5">
+            <div class="testimonio">
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
+                </div>
+                <div>
+                    <img src="/images/sello.svg" />
+                    <span>Nombre de la persona</span>
+                </div>
+            </div>
+            <div class="testimonio">
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
+                </div>
+                <div>
+                    <img src="/images/sello.svg" />
+                    <span>Nombre de la persona</span>
+                </div>
+            </div>
+            <div class="testimonio">
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
+                </div>
+                <div>
+                    <img src="/images/sello.svg" />
+                    <span>Nombre de la persona</span>
+                </div>
+            </div>
+            <div class="testimonio">
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
+                </div>
+                <div>
+                    <img src="/images/sello.svg" />
+                    <span>Nombre de la persona</span>
+                </div>
+            </div>
+            <div class="testimonio">
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
+                </div>
+                <div>
+                    <img src="/images/sello.svg" />
+                    <span>Nombre de la persona</span>
+                </div>
+            </div>
+            <div class="testimonio">
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
+                </div>
+                <div>
+                    <img src="/images/sello.svg" />
+                    <span>Nombre de la persona</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'pre-footer.njk' %}
+
 {% endfor %}
 </div>
+
+<script>
+    document.addEventListener( 'DOMContentLoaded', function() {
+
+        var splide = new Splide( '.splide',{
+            heightRatio: 1,
+            direction: 'ttb',
+            perPage: 1,
+            focus: 'center',
+            arrows: true,
+            type: 'loop',
+            autoplay: true,
+        } );
+
+        splide.mount();
+
+    });
+</script>

@@ -15,6 +15,10 @@ export default {
             name: 'intro',
             title: 'Introducción',
         },
+        {
+            name: 'diff',
+            title: 'Diferenciadores',
+        },
   ],
     fields: [
         {
@@ -93,22 +97,94 @@ export default {
             group: 'intro'
         },
         {
-            name: 'introImg1',
-            title: 'Imagen principal para la introducción',
+            name: 'diffH3',
+            title: 'Subtítulo indicador para los diferenciadores',
+            type: 'string',
+            group: 'diff'
+        },
+        {
+            name: 'diffImg1',
+            title: 'Icono del diferenciador 1',
             type: 'image',
-            group: 'intro',
+            group: 'diff',
             options: {
                 hotspot: true,
             },
         },
         {
-            name: 'introImg2',
-            title: 'Imagen secundaria para la introducción',
+            name: 'diffTitle1',
+            title: 'Título del diferenciador 1',
+            type: 'string',
+            group: 'diff'
+        },
+        {
+            name: 'diffDesc1',
+            title: 'Descripción del diferenciador 1',
+            type: 'text',
+            group: 'diff'
+        },
+        {
+            name: 'diffImg2',
+            title: 'Icono del diferenciador 2',
             type: 'image',
-            group: 'intro',
+            group: 'diff',
             options: {
                 hotspot: true,
             },
+        },
+        {
+            name: 'diffTitle2',
+            title: 'Título del diferenciador 2',
+            type: 'string',
+            group: 'diff'
+        },
+        {
+            name: 'diffDesc2',
+            title: 'Descripción del diferenciador 2',
+            type: 'text',
+            group: 'diff'
+        },
+        {
+            name: 'diffImg3',
+            title: 'Icono del diferenciador 3',
+            type: 'image',
+            group: 'diff',
+            options: {
+                hotspot: true,
+            },
+        },
+        {
+            name: 'diffTitle3',
+            title: 'Título del diferenciador 3',
+            type: 'string',
+            group: 'diff'
+        },
+        {
+            name: 'diffDesc3',
+            title: 'Descripción del diferenciador 3',
+            type: 'text',
+            group: 'diff'
+        },
+        {
+            name: 'diffImg4',
+            title: 'Icono del diferenciador 4',
+            type: 'image',
+            group: 'diff',
+            options: {
+                hotspot: true,
+            },
+        },
+        {
+            name: 'diffTitle4',
+            title: 'Título del diferenciador 4',
+            type: 'string',
+            group: 'diff'
+        },
+        {
+            name: 'diffDesc4',
+            title: 'Descripción del diferenciador 4',
+            type: 'text',
+            group: 'diff'
         },
     ]
   }

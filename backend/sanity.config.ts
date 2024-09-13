@@ -2,6 +2,7 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+import {colorInput} from '@sanity/color-input'
 
 export default defineConfig({
   name: 'default',
@@ -11,6 +12,7 @@ export default defineConfig({
   dataset: 'production',
 
   plugins: [
+    colorInput(),
     structureTool({
       structure: (S) =>
         S.list()
@@ -56,11 +58,11 @@ export default defineConfig({
               .id('about')
               .child(S.document().schemaType('nosotros').documentId('nosotros')),
             S.listItem()
-              .title('Productos')
+              .title('Maltas')
               .id('productos')
               .child(S.document().schemaType('productos').documentId('productos')),
             S.listItem()
-              .title('Artículos')
+              .title('Noticias')
               .id('blog')
               .child(S.document().schemaType('blog').documentId('blog')),
             S.listItem()
@@ -72,28 +74,28 @@ export default defineConfig({
 
         // Crea un nuevo grupo llamado "Productos"
         S.listItem()
-        .title('Lista de productos')
+        .title('Lista de maltas')
         .child(
           S.list()
-            .title('Gestión de Productos')
+            .title('Gestión de maltas')
             .items([
               S.listItem()
                 .title('Productos')
                 .schemaType('products') // Asegúrate de que 'product' corresponde al nombre del schema en tu esquema de productos
-                .child(S.documentTypeList('products').title('Productos')),
+                .child(S.documentTypeList('products').title('Maltas')),
               S.listItem()
                 .title('Categorías')
                 .schemaType('category') // Asegúrate de que 'category' corresponde al nombre del schema en tu esquema de categorías
-                .child(S.documentTypeList('category').title('Categorías'))
+                .child(S.documentTypeList('category').title('Marcas'))
             ])
         ),
 
         // Crea un nuevo grupo llamado "Productos"
         S.listItem()
-        .title('Lista de artículos de blog')
+        .title('Lista de noticias')
         .child(
           S.list()
-            .title('Gestión de artículos')
+            .title('Gestión de noticias')
             .items([
               S.listItem()
                 .title('Artículos')

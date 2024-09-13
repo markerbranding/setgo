@@ -17,14 +17,31 @@ module.exports = async function() {
     introH3,
     introH2,
     introRichText,
-    introImg1{
+    diffH3,
+    diffImg1{
       "media": asset->{url},
       "alt": asset->{altText}
     },
-    introImg2{
+    diffTitle1,
+    diffDesc1,
+    diffImg2{
       "media": asset->{url},
       "alt": asset->{altText}
     },
+    diffTitle2,
+    diffDesc2,
+    diffImg3{
+      "media": asset->{url},
+      "alt": asset->{altText}
+    },
+    diffTitle3,
+    diffDesc3,
+    diffImg4{
+      "media": asset->{url},
+      "alt": asset->{altText}
+    },
+    diffTitle4,
+    diffDesc4,
   }`);
 
   await Promise.all(data.map(processContent)); // Procesa todo el contenido en cada objeto

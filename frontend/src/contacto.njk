@@ -4,36 +4,13 @@ eleventyComputed:
     description: "{{ contacto[0].descseo }}"
     keywords: "{{ contacto[0].keyseo }}"
 layout: "base.njk"
-#gsap: "contacto.js"
 permalink: "/{{ page.fileSlug }}/"
 ---
 
 <div data-barba="container" data-barba-namespace="contacto" data-css="contacto" data-js="contacto">
 {% for item in contacto %}
 
-    <section id="section__hero" class="pad__lr__5">
-        <div class="column__2">
-            <div class="col__left flex__justify__c pad__right__5 width__45">            
-                <h1>{{ item.heroH1 }}</h1>
-                <div>{{ item.heroH2 | safe }}</div>
-                <p>{{ item.heroP }}</p>
-                <a class="btn btn__hero">{{ item.heroBtn }}</a>
-            </div>
-            <div class="col__right width__55">
-                {% if item.heroImg %}
-                <picture>
-                    {% for format, images in item.heroImg %}
-                    <source srcset="{{ images | srcset }}" sizes="(max-width: 1200px) 100vw, 1200px" type="image/{{ format }}">
-                    {% endfor %}
-                    <img src="{{ item.heroImg.jpeg[0].url }}" alt="{{ item.heroImgAlt }}">
-                </picture>
-                {% endif %}
-            </div>
-        </div>
-    </section>
-
-
-    <section id="section__intro" class="pad__all__5 fadeInOut">
+    <section id="section__intro" class="pad__all__10">
         <div class="column__2">
             <div class="col__left">
                 <h3>{{ item.introH3 }}</h3>

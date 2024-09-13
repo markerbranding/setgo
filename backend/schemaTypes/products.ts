@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'products',
-  title: 'Productos',
+  title: 'Maltas',
   type: 'document',
   groups: [
     {
@@ -11,7 +11,15 @@ export default defineType({
     },
     {
         name: 'product',
-        title: 'Producto',
+        title: 'Malta',
+    },
+    {
+      name: 'desc',
+      title: 'Características',
+    },
+    {
+      name: 'more',
+      title: 'Otras maltas',
     },
   ],
   fields: [
@@ -40,7 +48,7 @@ export default defineType({
     }),
     defineField({
       name: 'title',
-      title: 'Nombre del producto',
+      title: 'Nombre de la malta',
       type: 'string',
       group: 'product'
     }),
@@ -56,8 +64,17 @@ export default defineType({
       group: 'product'
     }),
     defineField({
-      name: 'mainImage',
-      title: 'Imagen principal del producto',
+      name: 'tbImage',
+      title: 'Imagen de previsualización de la malta',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      group: 'product'
+    }),
+    defineField({
+      name: 'tbIcon',
+      title: 'Icono de previsualización de la malta',
       type: 'image',
       options: {
         hotspot: true,
@@ -67,7 +84,7 @@ export default defineType({
     defineField({
       name: 'categories',
       type: 'array',
-      title: 'Categoría del producto',
+      title: 'Marca de la malta',
       of: [{ type: 'reference', to: [{ type: 'category' }] }],
       options: {
         layout: 'tags'
@@ -81,11 +98,95 @@ export default defineType({
       group: 'product'
     }),
     defineField({
+      name: 'gallery',
+      title: 'Imágenes para carrusel',
+      type: 'array',
+      description: '*Subir imágenes de 700 x 700 pixeles',
+      of: [{type: 'image'}],
+      options: {
+        layout: 'grid',
+      },
+      group: 'product'
+    }),
+    defineField({
       name: 'body',
-      title: 'Descripción del producto',
+      title: 'Descripción general de la malta',
       type: 'blockContent',
       group: 'product'
     }),
+    defineField({
+      name: 'charateristics',
+      title: 'Características de la malta',
+      description: '*Agregar información como lista, con bullets',
+      type: 'blockContent',
+      group: 'desc'
+    }),
+    defineField({
+      name: 'quantity',
+      title: 'Presentación',
+      description: '*Agregar información como lista, con bullets',
+      type: 'blockContent',
+      group: 'desc'
+    }),
+    defineField({
+      name: 'colorEbc',
+      title: 'Color EBC',
+      type: 'string',
+      group: 'desc'
+    }),
+    defineField({
+      name: 'colorL',
+      title: 'Color ºL',
+      type: 'string',
+      group: 'desc'
+    }),
+    defineField({
+      name: 'humedad',
+      title: 'Porcentaje de humedad',
+      type: 'string',
+      group: 'desc'
+    }),
+    defineField({
+      name: 'extractoDb',
+      title: 'Porcentaje de extracto DB',
+      type: 'string',
+      group: 'desc'
+    }),
+    defineField({
+      name: 'proteinas',
+      title: 'Porcentaje de proteínas',
+      type: 'string',
+      group: 'desc'
+    }),
+    defineField({
+      name: 'fiabilidad',
+      title: 'Fiabilidad',
+      type: 'string',
+      group: 'desc'
+    }),
+    defineField({
+      name: 'glucanos',
+      title: 'Beta-Glucanos mg/l',
+      type: 'string',
+      group: 'desc'
+    }),
+
+    defineField({
+      name: 'moreProds',
+      type: 'object',
+      group: 'more',
+      fields: [
+        {
+          title: 'Maltas relacionadas',
+          name: 'relativeProducts',
+          type: 'array',
+          of: [{type: 'reference', to: [{type: 'products'}]}]
+        }
+      ]
+    }),
+
+
+
   ],
 
   preview: {

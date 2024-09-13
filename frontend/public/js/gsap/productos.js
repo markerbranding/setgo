@@ -37,11 +37,5 @@ function gsapSoloAnimations() {
         duration: 0.5,
         ease: "power1.out"
     }, "-=0.2")
-    .from("#section__hero picture", {
-        opacity: 0,
-        y: -50,
-        duration: 0.8,
-        ease: "power1.out"
-    }, "-=0.8")
 
 }
