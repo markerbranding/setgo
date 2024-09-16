@@ -16,6 +16,10 @@ export default {
             title: 'Introducción',
         },
         {
+            name: 'video',
+            title: 'Video',
+        },
+        {
             name: 'prod',
             title: 'Destacados',
         },
@@ -70,13 +74,18 @@ export default {
             group: 'hero'
         },
         {
-            name: 'heroImg',
-            title: 'Imagen principal',
-            type: 'image',
+            name: 'heroProdRef',
+            title: 'Banner principal',
+            type: 'object',
             group: 'hero',
-            options: {
-                hotspot: true,
-            },
+            fields: [
+              {
+                title: 'Maltas destacadas en el banner principal',
+                name: 'mainProducts',
+                type: 'array',
+                of: [{type: 'reference', to: [{type: 'products'}]}]
+              }
+            ]
         },
         {
             name: 'introH3',
@@ -107,6 +116,27 @@ export default {
             title: 'Imagen principal para la introducción',
             type: 'image',
             group: 'intro',
+            options: {
+                hotspot: true,
+            },
+        },
+        {
+            name: 'videoH2',
+            title: 'Frase para el apartado del video',
+            type: 'string',
+            group: 'video'
+        },
+        {
+            name: 'video',
+            title: 'Agregar video corporativo',
+            type: 'file',
+            group: 'video',
+        },
+        {
+            name: 'videoImg',
+            title: 'Imagen de portada para el video',
+            type: 'image',
+            group: 'video',
             options: {
                 hotspot: true,
             },

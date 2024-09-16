@@ -25,24 +25,24 @@ function gsapSoloAnimations() {
         duration: 0.5,
         ease: "power1.out"
     }, "-=0.2")
-    .from("p", {
-        opacity: 0,
-        x: -50,
-        duration: 0.5,
-        ease: "power1.out"
-    }, "-=0.2")
     .from("#section__hero .btn", {
         opacity: 0,
         x: -50,
         duration: 0.5,
         ease: "power1.out"
     }, "-=0.2")
-    .from("#section__hero picture", {
+    .from("#section__hero .image", {
         opacity: 0,
         y: -50,
         duration: 0.8,
         ease: "power1.out"
-    }, "-=0.8");
+    }, "-=0.8")
+    .from(".tooltip", {
+        opacity: 0,
+        x: -50,
+        duration: 0.5,
+        ease: "power1.out"
+    }, "-=0.2");
 
     // Animacion granos:
 
@@ -68,11 +68,16 @@ function gsapSoloAnimations() {
 
 
     // Testimonios Drag:
-
     Draggable.create(".draggable", {
         type: "x",
         bounds: "#section__testimonios",
         inertia: true,
-      });
+    });
+
+    
+    // Lightbox:
+    fsLightboxInstances["first-lightbox"].props.onOpen = function () {
+        console.log("The first lightbox has opened.");
+    }
 
 }

@@ -11,7 +11,7 @@ export default defineType({
     },
     {
         name: 'category',
-        title: 'Categoría',
+        title: 'Marca',
     },
   ],
   fields: [
@@ -40,7 +40,7 @@ export default defineType({
     }),
     defineField({
       name: 'title',
-      title: 'Nombre de la categoría',
+      title: 'Nombre de la marca',
       type: 'string',
       group: 'category'
     }),
@@ -52,6 +52,45 @@ export default defineType({
         source: 'title',
         maxLength: 96,
       },
+      group: 'category'
+    }),
+    defineField({
+      name: 'imgMarca',
+      title: 'Logo de la marca',
+      type: 'image',
+      group: 'category',
+      options: {
+          hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'description',
+      title: 'Historia de la marca',
+      type: 'blockContent',
+      group: 'category',
+    }),
+    defineField({
+      name: 'attribute1',
+      title: 'Primer atributo de la marca',
+      type: 'string',
+      group: 'category'
+    }),
+    defineField({
+      name: 'attribute2',
+      title: 'Segundo atributo de la marca',
+      type: 'string',
+      group: 'category'
+    }),
+    defineField({
+      name: 'attribute3',
+      title: 'Tercer atributo de la marca',
+      type: 'string',
+      group: 'category'
+    }),
+    defineField({
+      name: 'attribute4',
+      title: 'Cuarto atributo de la marca',
+      type: 'string',
       group: 'category'
     }),
     defineField({

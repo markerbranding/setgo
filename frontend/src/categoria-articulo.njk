@@ -5,7 +5,7 @@ eleventyComputed:
     keywords: "{{ categoriasPosts[0].keyseo }}"
 layout: base.njk
 pagination:
-  data: collections.uniqueCategories
+  data: collections.categoriasBlog
   size: 1
   alias: categoriaPost
 permalink: "/articulos/categorias/{{ categoriaPost.slug }}/index.html"

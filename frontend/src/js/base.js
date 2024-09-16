@@ -1,3 +1,14 @@
+import './splide.min.js';
+import 'https://unpkg.com/@barba/core';
+import 'https://unpkg.com/@barba/css';
+import './fslightbox.js';
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', (event) => {
     
     gsap.registerPlugin(ScrollTrigger,ScrollToPlugin,DrawSVGPlugin,ScrollSmoother,SplitText, Draggable, InertiaPlugin);

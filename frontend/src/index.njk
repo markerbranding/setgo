@@ -20,6 +20,20 @@ permalink: "/{{ page.fileSlug }}/"
                 <a class="btn btn__hero">{{ item.heroBtn }}</a>
             </div>
             <div class="col__right width__55">
+
+
+                <div id="carrusel__hero" class="splide" aria-label="Maltas destacadas">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            {% for item in item.heroProdRef.mainProducts %}
+                                {% include "producto-banner.njk" %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!--
                 <div id="carrusel__hero" class="splide" aria-label="Splide Basic HTML Example">
                     <div class="splide__track">
                       <ul class="splide__list">
@@ -46,7 +60,8 @@ permalink: "/{{ page.fileSlug }}/"
                         </li>
                       </ul>
                     </div>
-                  </div>
+                </div>
+                -->
             </div>
         </div>
     </section>
@@ -83,16 +98,28 @@ permalink: "/{{ page.fileSlug }}/"
         <div class="column__2">
             <div class="grid__video"><span></span><span></span><span></span><span></span></div>
             <div class="col__left width__60">
-                <h2>Descubre el poder de nuestras maltas importadas</h2>
+                <h2>{{ item.videoH2 }}</h2>
             </div>
             <div class="col__right width__40">
-                <a class="video__btn">
+                {% if item.video %}
+                <a
+                data-poster="{{ item.videoImg.poster.url }}"
+                data-fslightbox="first-lightbox" href="{{ item.video.clip.url }}"
+                class="video__btn">
                     <img src="/images/play_button.svg" alt="Maltas de calidad"/>
                     Mirar video
                 </a>
+                {% endif %}
             </div>
         </div>
     </section>
+
+
+
+
+    
+
+
 
 
     <section id="section__productos" class="pad__lr__10 pad__tb__5">
@@ -104,7 +131,7 @@ permalink: "/{{ page.fileSlug }}/"
                     {% include "producto-card.njk" %}
                 {% endfor %}
             </ul>
-            <a class="btn mar__top__5">Ver maltas por marca</a>
+            <a class="btn mar__top__5">Ver catálogo completo</a>
         </div>
     </section>
 
@@ -128,60 +155,29 @@ permalink: "/{{ page.fileSlug }}/"
             <h2>Qué opinan nuestros clientes</h2>
         </div>
         <div class="column__1 draggable pad__tb__10 pad__lr__5">
+
+
+            {% for testimonio in testimonios %}
             <div class="testimonio">
                 <div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
+                    <p>"{{ testimonio.testimony }}"</p>
                 </div>
                 <div>
-                    <img src="/images/sello.svg" />
-                    <span>Nombre de la persona</span>
+                    <picture>
+                        {% for format, images in testimonio.photo %}
+                        <source srcset="{{ images | srcset }}" sizes="(max-width: 900px) 100vw, 900px" type="image/{{ format }}">
+                        {% endfor %}
+                        <img src="{{ testimonio.photo.jpeg[0].url }}" alt="{{ testimonio.introImg1Alt }}">
+                    </picture>
+                    <div class="testimonio__nombres">
+                        <span>{{ testimonio.title }}</span>
+                        <span>{{ testimonio.empresa }}</span>
+                    </div>
+                    
                 </div>
             </div>
-            <div class="testimonio">
-                <div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
-                </div>
-                <div>
-                    <img src="/images/sello.svg" />
-                    <span>Nombre de la persona</span>
-                </div>
-            </div>
-            <div class="testimonio">
-                <div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
-                </div>
-                <div>
-                    <img src="/images/sello.svg" />
-                    <span>Nombre de la persona</span>
-                </div>
-            </div>
-            <div class="testimonio">
-                <div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
-                </div>
-                <div>
-                    <img src="/images/sello.svg" />
-                    <span>Nombre de la persona</span>
-                </div>
-            </div>
-            <div class="testimonio">
-                <div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
-                </div>
-                <div>
-                    <img src="/images/sello.svg" />
-                    <span>Nombre de la persona</span>
-                </div>
-            </div>
-            <div class="testimonio">
-                <div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima quidem aliquid maxime, fugiat asperiores dignissimos aliquam laborum eligendi ea iure voluptatem dolore sunt. Quaerat iure vel officia odit consequatur?</p>
-                </div>
-                <div>
-                    <img src="/images/sello.svg" />
-                    <span>Nombre de la persona</span>
-                </div>
-            </div>
+            {% endfor %}
+            
         </div>
     </section>
 

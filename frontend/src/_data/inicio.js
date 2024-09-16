@@ -18,9 +18,17 @@ module.exports = async function() {
     },
     heroP,
     heroBtn,
-    heroImg{
-      "media": asset->{url},
-      "alt": asset->{altText}
+    heroProdRef{
+      "mainProducts": mainProducts[]->{
+        title,
+        slug,
+        "categories": categories[]->title,
+        "categoriesSlug": categories[]->slug,
+        gallery[]{
+          "media": asset->{url},
+          "alt": asset->{alt},
+        }
+      }
     },
     introH3,
     introH2,
@@ -28,6 +36,14 @@ module.exports = async function() {
     introBtn,
     introImg1{
       "media": asset->{url},
+      "alt": asset->{altText}
+    },
+    videoH2,
+    video{
+      "clip": asset->{url},
+    },
+    videoImg{
+      "poster": asset->{url},
       "alt": asset->{altText}
     },
     recentProdRef{
@@ -47,13 +63,9 @@ module.exports = async function() {
           "media": asset->{url},
           "alt": asset->{altText}
         },
-        mainImage{
-          "media": asset->{url},
-          "alt": asset->{altText}
-        },
       }
     },
-      recentBlogRef{
+    recentBlogRef{
       "recentBlogs": recentBlogs[]->{
         title,
         slug,

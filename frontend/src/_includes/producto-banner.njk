@@ -1,0 +1,17 @@
+<li class="splide__slide">
+
+    {% set imagen = item.gallery[1] %}
+    {% if imagen %}
+    <picture class="image">
+        {% for format, images in imagen %}
+        <source srcset="{{ images | srcset }}" sizes="(max-width: 600px) 100vw, 600px" type="image/{{ format }}">
+        {% endfor %}
+        <img src="{{ imagen.png[0].url }}" alt="{{ imagen.Alt }}">
+    </picture>
+    {% endif %}
+    
+    <div class="tooltip">
+        <p>{{ item.title }}</p>
+        <a class="btn__mini" href="/productos/{{ item.slug.current }}">Más información</a>
+    </div>
+</li>

@@ -7,11 +7,28 @@ module.exports = async function() {
   descseo,
   keyseo,
   title,
-    slug,
+  slug,
+  imgMarca{
+    "media": asset->{url},
+    "alt": asset->{altText}
+  },
+  description,
+  attribute1,
+  attribute2,
+  attribute3,
+  attribute4,
   "products": *[_type == "products" && references(^._id)]{
     title,
     slug,
-    mainImage{
+    "categories": categories[]->title,
+    "categoriesSlug": categories[]->slug,
+    "categoriesColorLight": categories[]->catcolorlight{"color": hex},
+    "categoriesColorDark": categories[]->catcolordark{"color": hex},
+    tbImage{
+      "media": asset->{url},
+      "alt": asset->{altText}
+    },
+    tbIcon{
       "media": asset->{url},
       "alt": asset->{altText}
     },
