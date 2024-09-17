@@ -99,6 +99,13 @@ export default defineType({
       type: 'blockContent',
       group: 'post'
     }),
+    defineField({
+      name: 'file',
+      title: 'Agregar archivo PDF',
+      type: 'file',
+      description: '*Opcional',
+      group: 'post',
+    }),
   ],
 
   preview: {

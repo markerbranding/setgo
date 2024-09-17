@@ -7,13 +7,14 @@
 }
 
 #section__hero{
-    background-color: var(--color-secondary);
-    padding-top: calc(60px + 5%);
+    background-color: var(--color-secondary-light);
+    padding-top: calc(60px + 4%);
+    padding-bottom: 2%;
     h1{
-        color: var(--color-accent);
+        color: var(--color-secondary);
     }
     h2{
-        color: var(--color-white);
+        color: var(--color-secondary);
     }
     h2 strong{
         color: var(--color-primary-light);
@@ -23,6 +24,22 @@
         color: var(--color-white);
         font-size: var(--size-md);
     }
+}
+
+#section__intro .col__left{
+    width: 75%;
+}
+
+#section__intro .col__right{
+    width: 25%;
+    padding-left: 50px;
+}
+
+.sidebar{
+    width: 100%;
+    background-color: var(--color-secondary-light);
+    padding: 30px;
+    border-radius: 30px;
 }
 
 .hide__category .card__category{
