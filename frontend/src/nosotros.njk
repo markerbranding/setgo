@@ -21,6 +21,7 @@ permalink: "/{{ page.fileSlug }}/"
             <div class="col__right width__45">
                 <div class="grano1" data-speed="1.2"><img src="/images/home_grano1.png" /></div>
                 <div class="grano2" data-speed="1.2"><img src="/images/home_grano2.png" /></div>
+                <div class="grano3" data-speed="1.2"><img src="/images/home_grano2.png" /></div>
                 {% if item.heroImg %}
                 <picture>
                     {% for format, images in item.heroImg %}
@@ -37,7 +38,7 @@ permalink: "/{{ page.fileSlug }}/"
     <section id="section__intro" class="pad__all__10 fadeInOut">
         <div class="column__2">
             <div class="col__left width__55">
-                <h3>{{ item.introH3 }}</h3>
+                <h3 class="identificador__left">{{ item.introH3 }}</h3>
                 <h2>{{ item.introH2 }}</h2>
             </div>
             <div class="col__right width__45">
@@ -48,7 +49,7 @@ permalink: "/{{ page.fileSlug }}/"
 
     <section id="section__diferenciadores" class="pad__lr__10 pad__bottom__5">
         <div class="column__1 pad__top__5 pad__bottom__5">
-            <h3>{{ item.diffH3 }}</h3>
+            <h3 class="identificador__left">{{ item.diffH3 }}</h3>
         </div>
         <div class="column__1 listado__x4">
             <div class="diferenciador">

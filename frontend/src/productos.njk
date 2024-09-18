@@ -14,20 +14,35 @@ permalink: "/productos/" # Para paginación amplia descomentar: permalink: "/pro
 <div data-barba="container" data-barba-namespace="productos" data-css="productos" data-js="productos">
 
   {% for item in productos %}
-  <section id="section__hero" class="pad__lr__10 pad__bottom__5">
+  <section id="section__hero" class="pad__lr__10" style="background-image: url(/images/paper.webp);">
       <div class="column__1 max1400">
         <h1>{{ item.heroH1 }}</h1>
         <div>{{ item.heroH2 | safe }}</div>
-        <p>{{ item.heroP }}</p>
         <a class="btn btn__hero">{{ item.heroBtn }}</a>
       </div>
   </section>
   {% endfor %}
 
+
   <section id="section__intro" class="pad__lr__10 pad__tb__5">
-      <div class="column__1 max1400">
-          <h2>Productos</h2>
-          <ul role="list" class="listado__x3 width__100">
+    <div class="column__1 max1400 flex__align__c">
+      <h3 class="identificador">Maltas por marca</h3>
+      <ul id="listado__marcas" role="list" class="listado__x2 width__100">
+        {% for marca in collections.categorias %}
+        <li class="logo__category">
+          <a class="marca__btn" href="/productos/categorias/{{marca.slug.current}}"><img src="{{ marca.imgMarca.url }}" /></a>
+          <a class="btn btn__gray" href="/productos/categorias/{{marca.slug.current}}">Ver maltas {{ marca.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+
+  <section id="section__catalogo" class="pad__lr__10 pad__tb__5">
+      <div class="column__1 max1400 flex__align__c">
+          <h3 class="identificador">Maltas por tipo</h3>
+          <ul id="listado__maltas" role="list" class="listado__x3 width__100">
               {%- for item in pagination.items -%}
                   {% include "producto-card.njk" %}
               {%- endfor %}

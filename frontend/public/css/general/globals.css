@@ -350,7 +350,7 @@ section{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
-    grid-gap: 5%;
+    grid-gap: 80px;
     grid-auto-rows: auto;
 }
 
@@ -358,7 +358,7 @@ section{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
-    grid-gap: 5%;
+    grid-gap: 80px;
     grid-auto-rows: auto;
     justify-items: stretch;
 }
@@ -367,7 +367,7 @@ section{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
-    grid-gap: 5%;
+    grid-gap: 80px;
     grid-auto-rows: auto;
 }
 
@@ -375,7 +375,7 @@ section{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
-    grid-gap: 5%;
+    grid-gap: 80px;
     grid-auto-rows: auto;
 }
 
@@ -383,7 +383,7 @@ section{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
-    grid-gap: 5%;
+    grid-gap: 80px;
     grid-auto-rows: auto;
 }
 
