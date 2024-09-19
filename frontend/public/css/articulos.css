@@ -40,6 +40,27 @@
     background-color: var(--color-secondary-light);
     padding: 30px;
     border-radius: 30px;
+    h2{
+        font-size: var(--size-md);
+        color: var(--color-accent);
+        margin-bottom: 0px;
+    }
+    ul{
+        margin-bottom: 5%;
+    }
+    li{
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        margin-bottom: 0px;
+        padding: 8px 0px;
+        a{
+            font-size: var(--size-sm);
+            margin-bottom: 0px;
+        }
+        a:hover{
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+    }
 }
 
 .hide__category .card__category{

@@ -40,6 +40,12 @@ permalink: "/articulos/{{pagination.pageNumber + 1}}/"
               <li><a href="/articulos/categorias/{{ cat.slug.current }}">{{ cat.title }}</a></li>
               {% endfor %}
             </ul>
+            <h2>Artículos recientes</h2>
+            <ul role="list">
+              {% for art in collections.articulos | slice(5) %}
+              <li><a href="/articulos/categorias/{{ cat.slug.current }}">{{ art.title }}</a></li>
+              {% endfor %}
+            </ul>
           </div>
         </div>
           
@@ -47,7 +53,7 @@ permalink: "/articulos/{{pagination.pageNumber + 1}}/"
   </section>
 
 
-  <section id="section__paginacion" class="pad__lr__5 pad__bottom__5">
+  <section id="section__paginacion" class="pad__lr__10 pad__bottom__5">
     <div class="column__1">
       <ul class="paginacion" role="list">
         {% if pagination.href.previous %}

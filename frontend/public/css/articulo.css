@@ -9,25 +9,72 @@
 
 
 #section__hero{
-    background-color: var(--color-secondary);
+    padding-top: calc(60px + 5%);
+    .column__2{
+        .col__left{
+            width: 75%;
+            padding-right: 50px;
+            .date__p{
+                font-size: var(--size-sm);
+                font-weight: 400;
+                opacity: 0.7;
+            }
+            img{
+                border-radius: 30px;
+                margin-bottom: 5%;
+                width: 100%;
+            }
+        }
+        .col__right{
+            width:25%;
+            padding-left: 50px;
+        }
+    }
+}
+
+.body__article img{
+    max-width: 70%;
+    margin: 5% auto;
+}
+
+.body__article h2{
+    font-size: var(--size-lg);
+    color: var(--color-primary-light);
+}
+
+.body__article p{
+    font-weight: 400;
+    margin-bottom: 40px;
 }
 
 h1{
-    font-size: var(--size-2xl);
-    color: var(--color-white);
+    font-size: var(--size-xl);
+    color: var(--color-secondary);
 }
 
 .categoria_articulo{
-    font-size: var(--size-sm);
-    color: var(--color-accent);
+    font-size: var(--size-xs);
+    color: var(--color-secondary);
     font-weight: 300;
     text-transform: uppercase;
     margin-bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    gap: 5px;
 }
 
 .categoria_articulo a{
     font-size: inherit;
     font-weight: 400;
+    margin-bottom: 0px;
+    color: var(--color-primary-light);
+}
+
+.categoria_articulo a:hover{
+    text-decoration: underline;
 }
 
 #section__main__image{
@@ -42,4 +89,35 @@ h1{
     background-color: var(--color-secondary);
     top: 0;
     left: 0;
+}
+
+.sidebar{
+    width: 100%;
+    background-color: var(--color-secondary-light);
+    padding: 30px;
+    border-radius: 30px;
+    h2{
+        font-size: var(--size-md);
+        color: var(--color-accent);
+        margin-bottom: 0px;
+    }
+    ul{
+        margin-bottom: 35px;
+    }
+    ul:last-child{
+        margin-bottom: 0px;
+    }
+    li{
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        margin-bottom: 0px;
+        padding: 8px 0px;
+        a{
+            font-size: var(--size-sm);
+            margin-bottom: 0px;
+        }
+        a:hover{
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+    }
 }

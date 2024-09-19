@@ -37,6 +37,12 @@ module.exports = function (eleventyConfig) {
 
 
 
+  
+  // Filtro personalizado 'slice' para limitar el número de elementos
+  eleventyConfig.addFilter('slice', function(arr, limit) {
+    return arr.slice(0, limit);
+  });
+
 
 
   // Filtro para crear un srcset de imágenes
