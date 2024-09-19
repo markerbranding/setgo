@@ -54,5 +54,14 @@ export default {
             type: 'blockContent',
             group: 'intro'
         },
+        {
+            name: 'contactImg',
+            title: 'Imagen principal para la introducción',
+            type: 'image',
+            group: 'intro',
+            options: {
+                hotspot: true,
+            },
+        },
     ]
   }

@@ -10,14 +10,40 @@ permalink: "/{{ page.fileSlug }}/"
 <div data-barba="container" data-barba-namespace="contacto" data-css="contacto" data-js="contacto">
 {% for item in contacto %}
 
-    <section id="section__intro" class="pad__all__10">
+    <section id="section__hero" class="pad__all__10">
         <div class="column__2">
-            <div class="col__left">
-                <h3>{{ item.introH3 }}</h3>
+            <div class="col__left flex__justify__c">
+                <h1 class="identificador__left">{{ item.introH3 }}</h1>
                 <h2>{{ item.introH2 }}</h2>
                 <div>{{ item.introRichText | safe }}</div>
+                <div class="bloques__contacto">
+                    
+                        <ul role="list">
+                            {% for item in empresa %}
+                                <li>Llamada: <a class="tel__text" href="tel:+521{{ item.brandPhone }}">{{ item.brandPhone }}</a></li>
+                                <li>WhatsApp: <a class="tel__text" href="https://wa.me/521{{ marca.brandWhats }}">{{ item.brandWhats }}</a></li>
+                                <li>Email: <a href="mailto:{{ item.brandEmail }}">{{ item.brandEmail }}</a></li>
+                                {% if item.brandAddress %}<li>Almacén: <a href="{{ item.brandAddressUrl }}" target="_blank">{{ item.brandAddress }}</a></li>{% endif %}
+                            {% endfor %}
+                            {% for item in social %}
+                            <li>Síguenos en: <a href="{{ item.facebook }}" target="_blank">Facebook</a>, <a href="{{ item.instagram }}" target="_blank">Instagram</a>, <a href="{{ item.linkedin }}" target="_blank">LinkedIn</a></li>
+                            {% endfor %}
+                        </ul>
+                    
+                </div>
             </div>
-            <div class="col__right ">
+            <div class="col__right flex__justify__c">
+
+                {% if item.contactImg %}
+                    <picture class="img__anim intro__img radius__30">
+                        {% for format, images in item.contactImg %}
+                        <source srcset="{{ images | srcset }}" sizes="(max-width: 900px) 100vw, 900px" type="image/{{ format }}">
+                        {% endfor %}
+                        <img src="{{ item.contactImg.jpeg[0].url }}" alt="{{ item.contactImgAlt }}">
+                    </picture>
+                {% endif %}
+
+                <!--
                 <form action="/success.php" method="POST" autocomplete="on">
                     <div>
                         <label for="name">Nombre:</label>
@@ -46,7 +72,7 @@ permalink: "/{{ page.fileSlug }}/"
                     
                     
                     <button class="btn" type="submit">Enviar</button>
-                </form>
+                </form>-->
             </div>
         </div>
     </section>

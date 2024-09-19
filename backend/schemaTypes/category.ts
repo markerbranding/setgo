@@ -58,6 +58,7 @@ export default defineType({
       name: 'imgMarca',
       title: 'Logo de la marca',
       type: 'image',
+      description: '*Imagen de 200 x 100 pixeles en formato SVG (vectorial) o PNG',
       group: 'category',
       options: {
           hotspot: true,
@@ -92,6 +93,16 @@ export default defineType({
       title: 'Cuarto atributo de la marca',
       type: 'string',
       group: 'category'
+    }),
+    defineField({
+      name: 'imgMain',
+      title: 'Imagen grande para dividir descripción y catálogo',
+      type: 'image',
+      description: '*Imagen de 1920 x 900 pixeles en JPEG',
+      group: 'category',
+      options: {
+          hotspot: true,
+      },
     }),
     defineField({
       name: 'catcolorlight',

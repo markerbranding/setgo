@@ -175,6 +175,7 @@ ol:where([role="list"]) {
 
 .btn__gray{
     background-color: var(--color-secondary);
+    font-size: var(--size-xs);
     padding: 5px 14px;
     text-transform: unset;
 }

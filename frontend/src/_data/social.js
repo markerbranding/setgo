@@ -4,6 +4,7 @@ module.exports = async function() {
   const data = await client.fetch(`*[_type == "social"]{
     facebook,
     instagram,
+    linkedin,
     metaPixel,
     googleTag,
   }`);

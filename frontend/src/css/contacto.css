@@ -1,11 +1,49 @@
-#section__intro{
+#section__hero{
     .col__left{
         padding-right: 10%;
+
     }
     h2{
         color: var(--color-accent);
+        font-size: var(--size-2xl);
     }
 }
+
+.bloques__contacto{
+    width: 100%;
+    background-color: var(--color-secondary-light);
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.bloques__contacto ul{
+    width: 100%;
+}
+
+.bloques__contacto li{
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    margin-bottom: 0px;
+    padding: 5px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    font-size: var(--size-sm);
+}
+
+.bloques__contacto a{
+    font-size: inherit;
+    margin-bottom: 0px;
+    color: var(--color-secondary);
+    font-weight: 500;
+}
+
+.bloques__contacto a:hover{
+    color: var(--color-primary-light);
+    text-decoration: underline;
+}
+
 
 form{
     width: 100%;

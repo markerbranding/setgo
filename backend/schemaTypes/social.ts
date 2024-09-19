@@ -4,11 +4,6 @@ export default {
     type: 'document',
     fields: [
       {
-        name: 'title',
-        title: 'Título',
-        type: 'string',
-      },
-      {
         name: 'facebook',
         title: 'URL cuenta de Facebook',
         type: 'string'
@@ -16,6 +11,11 @@ export default {
       {
         name: 'instagram',
         title: 'URL cuenta de Instagram',
+        type: 'string'
+      },
+      {
+        name: 'linkedin',
+        title: 'URL cuenta de LinkedIn',
         type: 'string'
       },
       {

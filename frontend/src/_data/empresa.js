@@ -10,6 +10,7 @@ module.exports = async function() {
     brandIndustry,
     brandTagLine,
     brandPhone,
+    brandWhats,
     brandEmail,
     brandAddress,
     brandAddressUrl,

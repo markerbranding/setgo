@@ -17,6 +17,10 @@ module.exports = async function() {
   attribute2,
   attribute3,
   attribute4,
+  imgMain{
+    "media": asset->{url},
+    "alt": asset->{altText}
+  },
   "products": *[_type == "products" && references(^._id)]{
     title,
     slug,

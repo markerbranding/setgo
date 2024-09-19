@@ -11,7 +11,7 @@ pagination:
 permalink: "/productos/categorias/{{ categoria.slug.current }}/"
 ---
 
-<div data-barba="container" data-barba-namespace="categoria-producto" data-css="productos">
+<div data-barba="container" data-barba-namespace="categoria-producto" data-css="productos" data-js="productos">
 
   <section id="section__hero" class="pad__lr__10 pad__bottom__5">
     <div class="column__1">
@@ -73,14 +73,30 @@ permalink: "/productos/categorias/{{ categoria.slug.current }}/"
           <p>{{ categoria.attribute4 }}</p>
         </div>
       </div>
-      <a class="btn" style="{% for color in categoria.products %} background-color: {{color.categoriesColorDark[0].color}}; {% endfor %}">Conoce nuestras maltas</a>
+      <a class="btn heroBtn" style="{% for color in categoria.products %} background-color: {{color.categoriesColorDark[0].color}}; {% endfor %}">Conoce nuestras maltas</a>
     </div>
   </section>
 
   
+  <section id="divisor__malta" class="pad__lr__10">
+    <div class="column__1">
+      {% if categoria.imgMain %}
+        <picture class="img__anim intro__img radius__30">
+            {% for format, images in categoria.imgMain %}
+            <source srcset="{{ images | srcset }}" sizes="(max-width: 900px) 100vw, 900px" type="image/{{ format }}">
+            {% endfor %}
+            <img src="{{ categoria.imgMain.jpeg[0].url }}" alt="{{ categoria.imgMainAlt }}">
+        </picture>
+      {% endif %}
+    </div>
+    <div class="half__panel" style="{% for color in categoria.products %} background-color: {{color.categoriesColorLight[0].color}}; {% endfor %}"></div>
+  </section>
+
+
   <section id="section__productos__category" class="pad__tb__5 pad__lr__10" style="{% for color in categoria.products %} background-color: {{color.categoriesColorLight[0].color}}; {% endfor %}">
   
     <div class="column__1 max1400">
+      <h3 style="{% for color in categoria.products %} color: {{color.categoriesColorDark[0].color}}; {% endfor %}">Catálogo de maltas {{ categoria.title }}:</h3>
     
       <ul role="list" class="listado__x3 width__100 hide__category">
         {% for item in categoria.products %}
@@ -95,7 +111,3 @@ permalink: "/productos/categorias/{{ categoria.slug.current }}/"
   {% include 'pre-footer.njk' %}
 
 </div>
-
-<script>
-  console.log("{{categoria.imgMarca}}")
-</script>

@@ -33,6 +33,12 @@ export default {
       type: 'string',
     },
     {
+      name: 'brandWhats',
+      title: 'Teléfono para Whatsapp',
+      description: '*Repetir el número en caso de ser el mismo del teléfono para llamadas. Escribir solo los 10 dígitos, sin lada y sin espacios.',
+      type: 'string',
+    },
+    {
       name: 'brandEmail',
       title: 'Correo electrónico',
       type: 'string',

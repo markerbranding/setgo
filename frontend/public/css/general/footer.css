@@ -89,11 +89,17 @@ footer{
 #inner__footer span{
     color: var(--color-white);
     font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
 }
 
 #inner__footer a{
     color: var(--color-accent);
-    font-size: 14px;
+    font-size: inherit;
+    margin-bottom: 0px;
 }
 
 #inner__footer a:hover{

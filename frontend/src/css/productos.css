@@ -114,3 +114,30 @@
 #listado__maltas{
     margin-top: 5%;
 }
+
+#divisor__malta picture{
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.half__panel{
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#section__productos__category .column__1{
+    align-items: center;
+}
+
+#section__productos__category h3{
+    font-size: var(--size-lg);
+    text-align: center;
+    margin-bottom: 5%;
+}
