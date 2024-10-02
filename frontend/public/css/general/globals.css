@@ -667,7 +667,7 @@ section{
 
     .listado__x3{
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 30px;
+        grid-gap: 50px 30px;
     }
 
     .listado__x4{
@@ -718,6 +718,10 @@ section{
 /*  Móvil  */
 @media only screen and (max-width: 768px) {
 
+    #section__hero{
+        padding-top: 60px;
+    }
+
     .column__3{
         flex-direction: column;
     }
@@ -740,5 +744,10 @@ section{
         row-gap: 30px;
     }
 
+    .card{
+        .card__title{
+            font-size: var(--size-lg);
+        }
+    }
 
 }

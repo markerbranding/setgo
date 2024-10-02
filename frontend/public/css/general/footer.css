@@ -140,6 +140,12 @@ footer{
 /*  Tableta  */
 @media only screen and (max-width: 1024px) {
 
+    #section__footer__divisor {
+        .column__1{
+            padding: 0 25%;
+        }
+    }
+
     footer{
         background-color: var(--color-secondary);
         padding: 10% 5% 50px;
@@ -169,6 +175,20 @@ footer{
 
     footer .column__1{
         gap: 50px;
+    }
+
+    #section__footer__divisor {
+        .column__1 {
+            padding: 0 10%;
+        }
+    }
+
+    #inner__footer span{
+        display: inline-block;
+    }
+
+    #inner__footer a{
+        display: inline-block;
     }
 
 }
