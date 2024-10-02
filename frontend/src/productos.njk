@@ -18,7 +18,7 @@ permalink: "/productos/" # Para paginación amplia descomentar: permalink: "/pro
       <div class="column__1 max1400">
         <h1>{{ item.heroH1 }}</h1>
         <div>{{ item.heroH2 | safe }}</div>
-        <a class="btn btn__hero">{{ item.heroBtn }}</a>
+        <a class="btn btn__hero heroBtn">{{ item.heroBtn }}</a>
       </div>
   </section>
   {% endfor %}
@@ -39,7 +39,7 @@ permalink: "/productos/" # Para paginación amplia descomentar: permalink: "/pro
   </section>
 
 
-  <section id="section__catalogo" class="pad__lr__10 pad__tb__5">
+  <section id="section__catalogo" class="anchor pad__lr__10 pad__tb__5">
       <div class="column__1 max1400 flex__align__c">
           <h3 class="identificador">Maltas por tipo</h3>
           <ul id="listado__maltas" role="list" class="listado__x3 width__100">

@@ -1,7 +1,7 @@
 // Btn ScrollTo:
 const heroBtn = document.querySelector('.heroBtn');
 heroBtn.addEventListener('click', () => {
-    gsap.to(window, { duration: 0.5, scrollTo: "#section__productos__category", ease: "power4.out"});
+    gsap.to(window, { duration: 0.5, scrollTo: ".anchor", ease: "power4.out"});
 });
 
 gsapSoloAnimations();

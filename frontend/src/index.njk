@@ -187,7 +187,33 @@ permalink: "/{{ page.fileSlug }}/"
 </div>
 
 <script>
-    document.addEventListener( 'DOMContentLoaded', function() {
+
+    function myFunction(x) {
+    if (x.matches) {
+
+        // Mobile:
+        
+        document.addEventListener( 'DOMContentLoaded', function() {
+
+        var splide = new Splide( '.splide',{
+            heightRatio: 1,
+            perPage: 1,
+            focus: 'center',
+            arrows: true,
+            type: 'loop',
+            autoplay: true,
+        } );
+
+        splide.mount();
+
+        });
+        //
+        
+    } else {
+        
+        // Desktop:
+        
+        document.addEventListener( 'DOMContentLoaded', function() {
 
         var splide = new Splide( '.splide',{
             heightRatio: 1,
@@ -201,5 +227,22 @@ permalink: "/{{ page.fileSlug }}/"
 
         splide.mount();
 
+        });
+
+    }
+    }
+
+    // Create a MediaQueryList object
+    var x = window.matchMedia("(max-width: 1024px)")
+
+    // Call listener function at run time
+    myFunction(x);
+
+    // Attach listener function on state changes
+    x.addEventListener("change", function() {
+    myFunction(x);
     });
+
+
+    
 </script>

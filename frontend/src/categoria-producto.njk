@@ -93,7 +93,7 @@ permalink: "/productos/categorias/{{ categoria.slug.current }}/"
   </section>
 
 
-  <section id="section__productos__category" class="pad__tb__5 pad__lr__10" style="{% for color in categoria.products %} background-color: {{color.categoriesColorLight[0].color}}; {% endfor %}">
+  <section id="section__productos__category" class="anchor pad__tb__5 pad__lr__10" style="{% for color in categoria.products %} background-color: {{color.categoriesColorLight[0].color}}; {% endfor %}">
   
     <div class="column__1 max1400">
       <h3 style="{% for color in categoria.products %} color: {{color.categoriesColorDark[0].color}}; {% endfor %}">Catálogo de maltas {{ categoria.title }}:</h3>

@@ -666,7 +666,7 @@ section{
     }
 
     .listado__x3{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 30px;
     }
 
@@ -683,6 +683,26 @@ section{
     .listado__x6{
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 30px;
+    }
+
+    .pad__lr__10{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .card{
+        .card__title{
+            margin-bottom: 10px;
+        }
+        .card__data{
+            border-radius: 0px 0px 20px 20px;
+            .card__icon {
+                width: 60px;
+                height: 60px;
+                top: -30px;
+                left: calc(50% - 30px);
+            }
+        }
     }
     
     
