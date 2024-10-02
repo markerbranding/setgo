@@ -88,3 +88,58 @@
 .paginacion a.active{
     pointer-events: none;
 }
+
+
+
+
+
+
+
+
+
+/*  Tableta  */
+@media only screen and (max-width: 1024px) {
+
+    #section__intro{
+        .col__left{
+            width: 100%;
+            .listado__x3{
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .card__pic picture{
+                border-radius: 20px;
+            }
+        }
+        .col__right{
+            padding-top: 5%;
+            width: 100%;
+            padding-left: 0px;
+        }
+    }
+}
+
+
+
+
+
+/*  Móvil  */
+@media only screen and (max-width: 768px) {
+
+    #section__intro{
+        .col__left{
+            width: 100%;
+            .listado__x3{
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .card__pic picture{
+                border-radius: 20px;
+            }
+        }
+        .col__right{
+            padding-top: 5%;
+            width: 100%;
+            padding-left: 0px;
+        }
+    }
+
+}

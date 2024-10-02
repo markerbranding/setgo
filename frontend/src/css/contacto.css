@@ -37,6 +37,7 @@
     margin-bottom: 0px;
     color: var(--color-secondary);
     font-weight: 500;
+    text-decoration: underline;
 }
 
 .bloques__contacto a:hover{
@@ -100,9 +101,19 @@ form button{
 /*  Tableta  */
 @media only screen and (max-width: 1024px) {
 
-    #section__intro .col__left{
-        padding-right: 0%;
+    #section__hero.pad__all__10{
+        padding: calc(60px + 5%) 5% 10%;
     }
+
+    #section__hero{
+        .column__2{
+            .col__left{
+                padding-right: 0%;
+                margin-bottom: 5%;
+            }
+        }
+        
+    } 
 
     form{
         padding: 0%;

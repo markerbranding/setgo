@@ -21,7 +21,7 @@ permalink: "/{{ page.fileSlug }}/"
                         <ul role="list">
                             {% for item in empresa %}
                                 <li>Llamada: <a class="tel__text" href="tel:+521{{ item.brandPhone }}">{{ item.brandPhone }}</a></li>
-                                <li>WhatsApp: <a class="tel__text" href="https://wa.me/521{{ marca.brandWhats }}">{{ item.brandWhats }}</a></li>
+                                <li>WhatsApp: <a class="tel__text" href="https://wa.me/521{{ item.brandWhats }}">{{ item.brandWhats }}</a></li>
                                 <li>Email: <a href="mailto:{{ item.brandEmail }}">{{ item.brandEmail }}</a></li>
                                 {% if item.brandAddress %}<li>Almacén: <a href="{{ item.brandAddressUrl }}" target="_blank">{{ item.brandAddress }}</a></li>{% endif %}
                             {% endfor %}
