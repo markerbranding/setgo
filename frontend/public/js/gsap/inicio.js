@@ -76,6 +76,7 @@ function gsapSoloAnimations() {
 
     
     // Lightbox:
+    fsLightbox.props.type = "video";
     fsLightboxInstances["first-lightbox"].props.onOpen = function () {
         console.log("The first lightbox has opened.");
     }
