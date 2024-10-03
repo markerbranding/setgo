@@ -11,7 +11,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("productos", async function(collectionApi) {
     const productosModule = require('./src/_data/products.js');
     const productos = await productosModule();
-    return productos;
+    return productos.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
   });
 
   // Colección categorías:
@@ -25,15 +25,21 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("articulos", async function(collectionApi) {
     const articulosModule = require('./src/_data/posts.js');
     const articulos = await articulosModule();
-    return articulos;
+    return articulos.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
   });
 
   // Colección categorías:
-  eleventyConfig.addCollection("categoriasBlog", async function(collectionApi) {
-    const categoriasPostsModule = require('./src/_data/categoriasPosts.js');
-    const categoriasPosts = await categoriasPostsModule();
-    return categoriasPosts;
+eleventyConfig.addCollection("categoriasBlog", async function(collectionApi) {
+  const categoriasPostsModule = require('./src/_data/categoriasPosts.js');
+  const categoriasPosts = await categoriasPostsModule();
+
+  // Ordenar los posts dentro de cada categoría por 'publishedAt'
+  categoriasPosts.forEach(categoria => {
+    categoria.posts.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
   });
+
+  return categoriasPosts;
+});
 
 
 
