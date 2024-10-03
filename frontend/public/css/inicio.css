@@ -492,6 +492,15 @@
         }
     }
 
+    #section__blog{
+        .listado__x4 li:nth-child(3){
+            display: none;
+        }
+        .listado__x4 li:nth-child(4){
+            display: none;
+        }
+    }
+
     .testimonio{
         padding: 20px;
         border-radius: 20px;

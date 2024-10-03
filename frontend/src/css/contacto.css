@@ -24,15 +24,12 @@
     border-bottom: 1px solid rgba(0,0,0,0.2);
     margin-bottom: 0px;
     padding: 5px 0px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 5px;
+    display: inline-block;
     font-size: var(--size-sm);
 }
 
 .bloques__contacto a{
+    display: inline-block;
     font-size: inherit;
     margin-bottom: 0px;
     color: var(--color-secondary);

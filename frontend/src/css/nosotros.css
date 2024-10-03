@@ -237,6 +237,10 @@
 /*  Móvil  */
 @media only screen and (max-width: 768px) {
 
+    #section__intro h2{
+        font-size: 24px;
+    }
+
     .diferenciador{
         border-right: 0px;
         border-bottom: 1px solid rgba(0,0,0,0.3);
