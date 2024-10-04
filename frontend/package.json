@@ -25,5 +25,8 @@
     "dotenv": "^16.4.5",
     "gsap": "file:gsap-bonus.tgz",
     "luxon": "^3.5.0"
+  },
+  "devDependencies": {
+    "@quasibit/eleventy-plugin-sitemap": "^2.2.0"
   }
 }

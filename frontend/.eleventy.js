@@ -1,9 +1,18 @@
 // Constante date/time
 const { DateTime } = require("luxon");
-
+// Sitemap
+const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 
 module.exports = function (eleventyConfig) {
+
+
+  // Sitemap
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: "https://setgomx.com", // Cambia esto por tu dominio real
+    }
+  });
 
   
 
