@@ -14,7 +14,7 @@ eleventyExcludeFromCollections: true
     {% for product in collections.productos %}
     <url>
         <loc>{{ metadata.siteUrl }}/productos/{{ product.slug.current }}</loc>
-        <lastmod>{{ product.publishedAt | date("yyyy-MM-DD") }}</lastmod>
+        <lastmod>{{ product.publishedAt }}</lastmod>
         <priority>0.8</priority>
     </url>
     {% endfor %}
@@ -22,7 +22,7 @@ eleventyExcludeFromCollections: true
     {% for post in collections.articulos %}
     <url>
         <loc>{{ metadata.siteUrl }}/articulos/{{ post.slug.current }}</loc>
-        <lastmod>{{ post.publishedAt | date("yyyy-MM-DD") }}</lastmod>
+        <lastmod>{{ post.publishedAt }}</lastmod>
         <priority>0.8</priority>
     </url>
     {% endfor %}
